@@ -1,65 +1,130 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lego World - Build & Explore</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Lego World - Multiplayer</title>
     <link rel="manifest" href="manifest.json">
-    <link rel="icon" type="image/png" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2YwYzQ0MCIvPjxwYXRoIGQ9Ik01MCAxNSBMNTAgODUgTDEwIDYwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNNTAgMTUgTDUwIDg1IEw5MCA2MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDQwIEwxNSA1MCBMNDUgNDAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA0MCBMNTAgNTAgTDgwIDQwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgNDAgTDk1IDUwIEw4MCA0MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDUwIEwxNSA2MCBMNDUgNTAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA1MCBMNTAgNjAgTDgwIDUwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgNTAgTDk1IDYwIEw4MCA1MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDYwIEwxNSA3MCBMNDUgNjAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA2MCBMNTAgNzAgTDgwIDYwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgNjAgTDk1IDcwIEw4MCA2MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDcwIEwxNSA4MCBMNDUgNzAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA3MCBMNTAgODAgTDgwIDcwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgNzAgTDk1IDgwIEw4MCA3MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDgwIEwxNSA5MCBMNDUgODAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA4MCBMNTAgOTAgTDgwIDgwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgODAgTDk1IDkwIEw4MCA4MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDkwIEwxNSAxMDAgTDQ1IDkwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNNTAgOTAgTDUwIDEwMCBMODAgOTAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik05NSA5MCBMOTUgMTAwIEw4MCA5MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHRleHQgeD0iNTAiIHk9IjUwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMDAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCI+TEVHTzwvdGV4dD48dGV4dCB4PSI1MCIgeT0iNzAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMwMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIj5BcHA8L3RleHQ+PC9zdmc+">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2YwYzQ0MCIvPjxwYXRoIGQ9Ik01MCAxNSBMNTAgODUgTDEwIDYwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNNTAgMTUgTDUwIDg1IEw5MCA2MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDQwIEwxNSA1MCBMNDUgNDAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA0MCBMNTAgNTAgTDgwIDQwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgNDAgTDk1IDUwIEw4MCA0MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDUwIEwxNSA2MCBMNDUgNTAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA1MCBMNTAgNjAgTDgwIDUwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgNTAgTDk1IDYwIEw4MCA1MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDYwIEwxNSA3MCBMNDUgNjAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA2MCBMNTAgNzAgTDgwIDYwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgNjAgTDk1IDcwIEw4MCA2MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDcwIEwxNSA4MCBMNDUgNzAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA3MCBMNTAgODAgTDgwIDcwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgNzAgTDk1IDgwIEw4MCA3MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDgwIEwxNSA5MCBMNDUgODAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA4MCBMNTAgOTAgTDgwIDgwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgODAgTDk1IDkwIEw4MCA4MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDkwIEwxNSAxMDAgTDQ1IDkwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNNTAgOTAgTDUwIDEwMCBMODAgOTAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik05NSA5MCBMOTUgMTAwIEw4MCA5MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHRleHQgeD0iNTAiIHk9IjUwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMDAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCI+TEVHTzwvdGV4dD48dGV4dCB4PSI1MCIgeT0iNzAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMwMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIj5BcHA8L3RleHQ+PC9zdmc+">
     <meta name="theme-color" content="#ffcc00">
-    <meta name="description" content="Build your Lego world with cars, houses, and minifigures. Travel to space and transform your character!">
+    <meta name="description" content="Build your Lego world with friends! Multiplayer Lego building game for local networks.">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Lego World">
+    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2YwYzQ0MCIvPjxwYXRoIGQ9Ik01MCAxNSBMNTAgODUgTDEwIDYwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNNTAgMTUgTDUwIDg1IEw5MCA2MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDQwIEwxNSA1MCBMNDUgNDAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA0MCBMNTAgNTAgTDgwIDQwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgNDAgTDk1IDUwIEw4MCA0MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDUwIEwxNSA2MCBMNDUgNTAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA1MCBMNTAgNjAgTDgwIDUwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgNTAgTDk1IDYwIEw4MCA1MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDYwIEwxNSA3MCBMNDUgNjAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA2MCBMNTAgNzAgTDgwIDYwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgNjAgTDk1IDcwIEw4MCA2MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDcwIEwxNSA4MCBMNDUgNzAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA3MCBMNTAgODAgTDgwIDcwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgNzAgTDk1IDgwIEw4MCA3MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDgwIEwxNSA5MCBMNDUgODAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA4MCBMNTAgOTAgTDgwIDgwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgODAgTDk1IDkwIEw4MCA4MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDkwIEwxNSAxMDAgTDQ1IDkwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNNTAgOTAgTDUwIDEwMCBMODAgOTAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik05NSA5MCBMOTUgMTAwIEw4MCA5MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHRleHQgeD0iNTAiIHk9IjUwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMDAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCI+TEVHTzwvdGV4dD48dGV4dCB4PSI1MCIgeT0iNzAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMwMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIj5BcHA8L3RleHQ+PC9zdmc+">
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
         }
-        
+
         body {
             background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
             min-height: 100vh;
-            overflow: hidden;
+            overflow-x: hidden;
             color: white;
             position: relative;
+            touch-action: manipulation;
         }
-        
-        /* PWA Install Banner */
+
+        /* Multiplayer Connection Banner */
+        .connection-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 2px solid #4a90e2;
+        }
+
+        .connection-status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #e53935;
+        }
+
+        .status-dot.connected {
+            background: #43a047;
+            box-shadow: 0 0 10px #43a047;
+        }
+
+        .connection-controls {
+            display: flex;
+            gap: 8px;
+        }
+
+        .connection-btn {
+            background: #43a047;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .connection-btn:hover {
+            background: #66bb6a;
+            transform: translateY(-2px);
+        }
+
+        /* Install Banner */
         .install-banner {
             position: fixed;
             bottom: 0;
             left: 0;
             width: 100%;
             background: rgba(0, 0, 0, 0.9);
-            padding: 15px;
+            padding: 12px 16px;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            z-index: 1000;
+            z-index: 999;
             transform: translateY(100%);
             transition: transform 0.3s ease;
+            font-size: 14px;
         }
-        
+
         .install-banner.show {
             transform: translateY(0);
         }
-        
+
         .install-text {
-            flex: 1;
+            text-align: center;
+            margin-bottom: 8px;
+            color: #fff;
         }
-        
+
         .install-btn {
             background: #ffcc00;
             color: #000;
             border: none;
-            padding: 8px 15px;
+            padding: 8px 20px;
             border-radius: 20px;
             font-weight: bold;
+            font-size: 16px;
             cursor: pointer;
-            margin-left: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
         }
-        
-        /* Animated background particles */
+
+        /* Particles */
         .particles {
             position: absolute;
             top: 0;
@@ -69,173 +134,81 @@
             z-index: 0;
             pointer-events: none;
         }
-        
+
+        /* Rest of the styles remain the same as previous version */
         .particle {
             position: absolute;
-            width: 4px;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.5);
+            width: 3px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.4);
             border-radius: 50%;
             animation: float 15s infinite linear;
         }
-        
+
         @keyframes float {
             0% { transform: translateY(0) translateX(0); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 0.8; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.5; }
             100% { transform: translateY(-100vh) translateX(100px); opacity: 0; }
         }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            position: relative;
-            z-index: 10;
-        }
-        
+
+        /* Header */
         header {
             text-align: center;
-            padding: 20px 0;
-            margin-bottom: 20px;
+            padding: 16px 12px;
+            margin-bottom: 16px;
             background: rgba(0, 0, 0, 0.6);
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            border: 3px solid #ffcc00;
+            border-radius: 12px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+            border: 2px solid #ffcc00;
             position: relative;
-            overflow: hidden;
         }
-        
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(255,204,0,0.1) 0%, transparent 70%);
-            z-index: -1;
-        }
-        
+
         h1 {
-            font-size: 3.5rem;
+            font-size: 2.2rem;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 10px;
-            text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+            text-shadow: 0 0 8px #ffcc00, 0 0 16px #ffcc00;
             color: #ffcc00;
             background: linear-gradient(45deg, #ffcc00, #ff6b6b, #4ecdc4);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: glow 2s infinite alternate;
         }
-        
+
         @keyframes glow {
-            from { text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00; }
-            to { text-shadow: 0 0 20px #ffcc00, 0 0 40px #ffcc00, 0 0 60px #ffcc00; }
+            from { text-shadow: 0 0 8px #ffcc00, 0 0 16px #ffcc00; }
+            to { text-shadow: 0 0 12px #ffcc00, 0 0 24px #ffcc00, 0 0 32px #ffcc00; }
         }
-        
+
         .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 700px;
+            font-size: 0.95rem;
+            opacity: 0.85;
+            line-height: 1.5;
             margin: 0 auto;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            max-width: 90%;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
         }
-        
+
+        /* Game Area */
         .game-area {
             display: flex;
-            gap: 20px;
+            flex-direction: column;
+            gap: 16px;
             margin-bottom: 20px;
         }
-        
+
         .world-view {
-            flex: 3;
-            height: 550px;
+            height: 420px;
             background: rgba(0, 0, 0, 0.7);
-            border-radius: 15px;
-            overflow: hidden;
-            position: relative;
-            border: 3px solid #4a90e2;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-        
-        .controls {
-            flex: 1;
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 15px;
-            padding: 20px;
-            border: 3px solid #4a90e2;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            overflow-y: auto;
-            max-height: 550px;
-        }
-        
-        .section-title {
-            color: #ffcc00;
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-            text-align: center;
-            border-bottom: 2px solid #ffcc00;
-            padding-bottom: 5px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-        }
-        
-        .build-options {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            margin-top: 15px;
-        }
-        
-        .build-btn {
-            background: linear-gradient(135deg, #e53935, #ff6b6b);
-            color: white;
-            border: none;
-            padding: 15px 10px;
             border-radius: 12px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            text-align: center;
-            font-size: 1rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            position: relative;
             overflow: hidden;
+            position: relative;
+            border: 2px solid #4a90e2;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
         }
-        
-        .build-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: 0.5s;
-        }
-        
-        .build-btn:hover::before {
-            left: 100%;
-        }
-        
-        .build-btn:hover {
-            transform: translateY(-5px) scale(1.03);
-            box-shadow: 0 8px 15px rgba(229, 57, 53, 0.4);
-        }
-        
-        .build-btn.active {
-            background: linear-gradient(135deg, #43a047, #66bb6a);
-            box-shadow: 0 0 20px rgba(67, 160, 71, 0.7);
-            transform: scale(1.05);
-        }
-        
-        .build-btn i {
-            font-size: 1.5rem;
-            display: block;
-            margin-bottom: 5px;
-        }
-        
+
         .world-map {
             position: absolute;
             width: 100%;
@@ -245,12 +218,10 @@
                 linear-gradient(-45deg, #2e7d32 25%, transparent 25%),
                 linear-gradient(45deg, transparent 75%, #2e7d32 75%),
                 linear-gradient(-45deg, transparent 75%, #2e7d32 75%);
-            background-size: 60px 60px;
-            background-position: 0 0, 0 30px, 30px -30px, -30px 0px;
+            background-size: 50px 50px;
             z-index: 1;
         }
-        
-        /* Enhanced items container */
+
         .items-container {
             position: absolute;
             top: 0;
@@ -259,420 +230,629 @@
             height: 100%;
             z-index: 2;
         }
-        
+
         .lego-item {
             position: absolute;
             z-index: 10;
             transition: transform 0.2s ease;
+            touch-action: none;
         }
-        
-        .lego-item:hover {
-            transform: scale(1.05);
+
+        .lego-item:hover, .lego-item:active {
+            transform: scale(1.08);
             z-index: 20 !important;
-            filter: drop-shadow(0 0 10px rgba(255, 204, 0, 0.7));
         }
-        
-        /* Enhanced Car */
-        .car {
-            width: 110px;
-            height: 55px;
-            background: linear-gradient(to bottom, #e53935, #c62828);
+
+        /* Build Controls */
+        .controls {
+            background: rgba(0, 0, 0, 0.7);
             border-radius: 12px;
-            position: relative;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            padding: 16px;
+            border: 2px solid #4a90e2;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            overflow-y: auto;
+            max-height: 500px;
         }
-        
-        .car-top {
-            position: absolute;
-            width: 60px;
-            height: 30px;
-            background: linear-gradient(to bottom, #ff9800, #f57c00);
+
+        .section-title {
+            color: #ffcc00;
+            margin-bottom: 14px;
+            font-size: 1.4rem;
+            text-align: center;
+            border-bottom: 2px solid #ffcc00;
+            padding-bottom: 6px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .build-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .build-btn {
+            background: linear-gradient(135deg, #e53935, #ff6b6b);
+            color: white;
+            border: none;
+            padding: 14px 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 70px;
+        }
+
+        .build-btn i {
+            font-size: 1.6rem;
+            margin-bottom: 6px;
+        }
+
+        .build-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(229, 57, 53, 0.4);
+        }
+
+        .build-btn.active {
+            background: linear-gradient(135deg, #43a047, #66bb6a);
+            box-shadow: 0 0 18px rgba(67, 160, 71, 0.7);
+            transform: scale(1.05);
+        }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 18px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #4a90e2;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 8px;
+            background: rgba(255, 204, 0, 0.1);
             border-radius: 8px;
-            top: -15px;
-            left: 25px;
+            border: 1px solid rgba(255, 204, 0, 0.3);
         }
-        
-        .car-wheel {
-            position: absolute;
-            width: 22px;
-            height: 22px;
-            background: #222;
+
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ffcc00;
+            text-shadow: 0 0 8px rgba(255, 204, 0, 0.5);
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            opacity: 0.9;
+            margin-top: 4px;
+        }
+
+        /* Customization Panel */
+        .customization-panel {
+            margin-top: 20px;
+            padding: 16px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            border: 2px solid #ffcc00;
+            overflow-y: auto;
+            max-height: 300px;
+        }
+
+        .customization-section {
+            margin-bottom: 18px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(255, 204, 0, 0.3);
+        }
+
+        .customization-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .customization-section h3 {
+            color: #ffcc00;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+            text-align: center;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .color-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+            justify-content: center;
+        }
+
+        .color-option {
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
-            bottom: -8px;
-            border: 3px solid #888;
-        }
-        
-        .car-wheel.left {
-            left: 15px;
-        }
-        
-        .car-wheel.right {
-            right: 15px;
-        }
-        
-        /* Enhanced Helicopter */
-        .helicopter {
-            width: 90px;
-            height: 45px;
-            background: linear-gradient(to bottom, #2196f3, #1976d2);
-            border-radius: 45px 45px 12px 12px;
-            position: relative;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-        
-        .helicopter-blade {
-            position: absolute;
-            width: 130px;
-            height: 10px;
-            background: linear-gradient(to right, #78909c, #546e7a);
-            border-radius: 5px;
-            top: -18px;
-            left: -20px;
-            animation: rotate 1.5s linear infinite;
+            cursor: pointer;
+            border: 2px solid #444;
+            transition: all 0.2s ease;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
-        
-        .helicopter-tail {
-            position: absolute;
-            width: 12px;
-            height: 40px;
-            background: linear-gradient(to bottom, #78909c, #546e7a);
-            border-radius: 6px;
-            right: -10px;
-            top: 5px;
+
+        .color-option:hover {
+            transform: scale(1.15);
+            box-shadow: 0 4px 10px rgba(255, 204, 0, 0.5);
         }
-        
-        /* Enhanced House */
-        .house {
-            width: 90px;
-            height: 90px;
-            background: linear-gradient(to bottom, #ff9800, #f57c00);
-            border-radius: 12px 12px 0 0;
-            position: relative;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+        .color-option.selected {
+            border: 3px solid #ffcc00;
+            box-shadow: 0 0 15px rgba(255, 204, 0, 0.8);
         }
-        
-        .house-roof {
-            position: absolute;
-            width: 0;
-            height: 0;
-            border-left: 50px solid transparent;
-            border-right: 50px solid transparent;
-            border-bottom: 45px solid #d32f2f;
-            top: -45px;
-            left: -5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+        .preset-btn {
+            width: 100%;
+            padding: 14px;
+            margin-top: 16px;
+            background: linear-gradient(135deg, #43a047, #2e7d32);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
-        
-        .house-window {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: #87ceeb;
-            border: 2px solid #222;
-            border-radius: 4px;
-            top: 30px;
-            left: 15px;
+
+        .preset-btn:hover {
+            background: linear-gradient(135deg, #66bb6a, #4caf50);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(67, 160, 71, 0.5);
         }
-        
-        .house-door {
-            position: absolute;
-            width: 25px;
-            height: 35px;
-            background: #8b4513;
-            border: 2px solid #222;
-            border-radius: 4px;
-            bottom: 0;
-            left: 32px;
+
+        /* Minifigure Preview */
+        .minifigure-preview {
+            display: flex;
+            justify-content: center;
+            margin: 16px 0;
+            height: 100px;
         }
-        
-        /* Earth Minifigure */
-        .minifigure {
-            width: 45px;
-            height: 75px;
+
+        /* Space Button */
+        .space-btn {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #9c27b0, #e91e63);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .space-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(156, 39, 176, 0.7);
+        }
+
+        .space-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Instructions */
+        .instructions {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 16px;
+            border-radius: 12px;
+            margin-top: 20px;
+            border: 2px solid #4a90e2;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .instructions h2 {
+            color: #ffcc00;
+            margin-bottom: 12px;
+            text-align: center;
+            font-size: 1.3rem;
+        }
+
+        .instructions ul {
+            padding-left: 18px;
+            margin-bottom: 14px;
+        }
+
+        .instructions li {
+            margin-bottom: 8px;
+        }
+
+        /* Minifigure Styles (Mobile-Optimized) */
+        .minifigure, .space-minifigure {
+            width: 40px;
+            height: 70px;
             display: flex;
             flex-direction: column;
             align-items: center;
             position: relative;
+            touch-action: none;
         }
-        
-        .minifigure-head {
-            width: 38px;
-            height: 28px;
-            background-color: #f5d6b5;
+
+        .minifigure-head, .space-helmet {
+            width: 34px;
+            height: 24px;
             border-radius: 50% 50% 40% 40%;
-            position: relative;
-            box-shadow: inset -3px -3px 0 rgba(0, 0, 0, 0.2), 
-                        inset 3px 3px 0 rgba(255, 255, 255, 0.2);
-            border: 2px solid #d4c1a9;
+            border: 1.5px solid #d4c1a9;
+            box-shadow: inset -2px -2px 0 rgba(0, 0, 0, 0.2), inset 2px 2px 0 rgba(255, 255, 255, 0.2);
         }
-        
+
+        .player-name {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-size: 10px;
+            white-space: nowrap;
+            max-width: 60px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Rest of the minifigure styles remain the same */
         .minifigure-face {
             position: absolute;
-            top: 6px;
-            left: 6px;
-            width: 26px;
-            height: 16px;
+            top: 5px;
+            left: 5px;
+            width: 24px;
+            height: 14px;
             display: flex;
             justify-content: space-around;
             align-items: center;
         }
-        
+
         .minifigure-eye {
-            width: 5px;
-            height: 5px;
+            width: 4px;
+            height: 4px;
             background-color: #000;
             border-radius: 50%;
-            position: relative;
         }
-        
-        .minifigure-eye::after {
-            content: '';
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: white;
-            border-radius: 50%;
-            top: 1px;
-            left: 1px;
-        }
-        
+
         .minifigure-mouth {
-            width: 12px;
-            height: 2px;
+            width: 10px;
+            height: 1.5px;
             background-color: #000;
-            border-radius: 2px;
+            border-radius: 1px;
         }
-        
+
         .minifigure-hair {
             position: absolute;
-            top: -6px;
-            left: 6px;
-            width: 26px;
-            height: 12px;
-            background-color: #8b4513;
-            border-radius: 50% 50% 50% 50%;
-            z-index: 1;
+            top: -5px;
+            left: 5px;
+            width: 24px;
+            height: 10px;
+            border-radius: 50%;
         }
-        
+
         .minifigure-body {
-            width: 42px;
-            height: 38px;
-            background-color: #e53935;
-            border-radius: 6px;
-            position: relative;
-            box-shadow: inset -3px -3px 0 rgba(0, 0, 0, 0.2), 
-                        inset 3px 3px 0 rgba(255, 255, 255, 0.2);
-            border: 2px solid #d4c1a9;
+            width: 38px;
+            height: 34px;
+            border-radius: 5px;
+            border: 1.5px solid #d4c1a9;
+            box-shadow: inset -2px -2px 0 rgba(0, 0, 0, 0.2), inset 2px 2px 0 rgba(255, 255, 255, 0.2);
             margin-top: -2px;
         }
-        
+
         .minifigure-arm {
             position: absolute;
-            width: 10px;
-            height: 28px;
-            background-color: inherit;
-            border-radius: 5px;
-            top: 8px;
+            width: 8px;
+            height: 24px;
+            border-radius: 4px;
+            top: 6px;
             z-index: -1;
         }
-        
+
         .minifigure-arm.left {
-            left: -10px;
+            left: -8px;
         }
-        
+
         .minifigure-arm.right {
-            right: -10px;
+            right: -8px;
         }
-        
+
         .minifigure-legs {
-            width: 38px;
-            height: 22px;
-            background-color: #2196f3;
-            border-radius: 6px;
-            position: relative;
+            width: 34px;
+            height: 20px;
+            border-radius: 5px;
+            border: 1.5px solid #d4c1a9;
+            box-shadow: inset -2px -2px 0 rgba(0, 0, 0, 0.2), inset 2px 2px 0 rgba(255, 255, 255, 0.2);
             margin-top: -2px;
-            box-shadow: inset -3px -3px 0 rgba(0, 0, 0, 0.2), 
-                        inset 3px 3px 0 rgba(255, 255, 255, 0.2);
-            border: 2px solid #d4c1a9;
         }
-        
+
         .minifigure-feet {
             position: absolute;
-            width: 38px;
-            height: 10px;
+            width: 34px;
+            height: 8px;
             background-color: #000;
-            bottom: -10px;
-            border-radius: 5px;
+            bottom: -8px;
+            border-radius: 4px;
             z-index: -1;
         }
-        
-        /* Space Suit Minifigure */
-        .space-minifigure {
-            width: 50px;
-            height: 80px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-        }
-        
+
         .space-helmet {
-            width: 42px;
-            height: 35px;
             background: linear-gradient(to bottom, #e0e0e0, #b0b0b0);
-            border-radius: 50% 50% 40% 40%;
-            position: relative;
-            box-shadow: inset -3px -3px 0 rgba(0, 0, 0, 0.2), 
-                        inset 3px 3px 0 rgba(255, 255, 255, 0.2);
-            border: 2px solid #999;
-            overflow: hidden;
         }
-        
+
         .helmet-visor {
             position: absolute;
-            width: 30px;
-            height: 20px;
+            width: 26px;
+            height: 16px;
             background: linear-gradient(to bottom, rgba(0, 100, 255, 0.3), rgba(0, 50, 150, 0.5));
             border-radius: 50%;
-            top: 8px;
-            left: 6px;
+            top: 6px;
+            left: 4px;
             border: 1px solid #666;
         }
-        
+
         .space-body {
-            width: 48px;
-            height: 42px;
+            width: 38px;
+            height: 38px;
             background: linear-gradient(to bottom, #4a4a4a, #2a2a2a);
-            border-radius: 6px;
-            position: relative;
-            box-shadow: inset -3px -3px 0 rgba(0, 0, 0, 0.4), 
-                        inset 3px 3px 0 rgba(100, 100, 100, 0.2);
-            border: 2px solid #666;
-            margin-top: -3px;
+            border-radius: 5px;
+            border: 1.5px solid #666;
+            box-shadow: inset -2px -2px 0 rgba(0, 0, 0, 0.4), inset 2px 2px 0 rgba(100, 100, 100, 0.2);
+            margin-top: -2px;
         }
-        
+
         .oxygen-tank {
             position: absolute;
-            width: 20px;
-            height: 25px;
+            width: 18px;
+            height: 22px;
             background: linear-gradient(to bottom, #2196f3, #0d47a1);
-            border-radius: 4px;
-            right: -22px;
+            border-radius: 3px;
+            right: -20px;
             top: 8px;
             border: 1px solid #111;
         }
-        
+
         .tank-hose {
             position: absolute;
-            width: 8px;
-            height: 12px;
+            width: 6px;
+            height: 10px;
             background: #2196f3;
-            border-radius: 4px;
-            right: -8px;
-            top: 20px;
+            border-radius: 3px;
+            right: -6px;
+            top: 18px;
         }
-        
+
         .space-arm {
             position: absolute;
-            width: 12px;
-            height: 30px;
+            width: 10px;
+            height: 28px;
             background: linear-gradient(to right, #4a4a4a, #2a2a2a);
-            border-radius: 6px;
-            top: 10px;
+            border-radius: 4px;
+            top: 8px;
             z-index: -1;
             border: 1px solid #666;
         }
-        
-        .space-arm.left {
-            left: -12px;
-        }
-        
-        .space-arm.right {
-            right: -12px;
-        }
-        
+
         .space-legs {
-            width: 42px;
-            height: 25px;
+            width: 34px;
+            height: 22px;
             background: linear-gradient(to bottom, #4a4a4a, #2a2a2a);
-            border-radius: 6px;
-            position: relative;
-            margin-top: -3px;
-            box-shadow: inset -3px -3px 0 rgba(0, 0, 0, 0.4), 
-                        inset 3px 3px 0 rgba(100, 100, 100, 0.2);
-            border: 2px solid #666;
+            border-radius: 5px;
+            border: 1.5px solid #666;
+            box-shadow: inset -2px -2px 0 rgba(0, 0, 0, 0.4), inset 2px 2px 0 rgba(100, 100, 100, 0.2);
+            margin-top: -2px;
         }
-        
+
         .space-feet {
             position: absolute;
-            width: 42px;
-            height: 12px;
+            width: 34px;
+            height: 10px;
             background: linear-gradient(to bottom, #333, #111);
-            bottom: -12px;
-            border-radius: 5px;
-            z-index: -1;
+            bottom: -10px;
+            border-radius: 4px;
             border: 1px solid #555;
+            z-index: -1;
         }
-        
-        /* Enhanced Rocket */
+
+        /* Vehicle Styles */
+        .car {
+            width: 90px;
+            height: 45px;
+            background: linear-gradient(to bottom, #e53935, #c62828);
+            border-radius: 10px;
+            position: relative;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .car-top {
+            position: absolute;
+            width: 50px;
+            height: 25px;
+            background: linear-gradient(to bottom, #ff9800, #f57c00);
+            border-radius: 6px;
+            top: -12px;
+            left: 20px;
+        }
+
+        .car-wheel {
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            background: #222;
+            border-radius: 50%;
+            bottom: -6px;
+            border: 2px solid #888;
+        }
+
+        .car-wheel.left {
+            left: 12px;
+        }
+
+        .car-wheel.right {
+            right: 12px;
+        }
+
+        .helicopter {
+            width: 75px;
+            height: 40px;
+            background: linear-gradient(to bottom, #2196f3, #1976d2);
+            border-radius: 38px 38px 8px 8px;
+            position: relative;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .helicopter-blade {
+            position: absolute;
+            width: 110px;
+            height: 8px;
+            background: linear-gradient(to right, #78909c, #546e7a);
+            border-radius: 4px;
+            top: -15px;
+            left: -18px;
+            animation: rotate 1.5s linear infinite;
+        }
+
+        .helicopter-tail {
+            position: absolute;
+            width: 10px;
+            height: 35px;
+            background: linear-gradient(to bottom, #78909c, #546e7a);
+            border-radius: 5px;
+            right: -8px;
+            top: 5px;
+        }
+
+        .house {
+            width: 75px;
+            height: 75px;
+            background: linear-gradient(to bottom, #ff9800, #f57c00);
+            border-radius: 10px 10px 0 0;
+            position: relative;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .house-roof {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 40px solid transparent;
+            border-right: 40px solid transparent;
+            border-bottom: 35px solid #d32f2f;
+            top: -35px;
+            left: -5px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .house-window {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: #87ceeb;
+            border: 1.5px solid #222;
+            border-radius: 3px;
+            top: 25px;
+            left: 12px;
+        }
+
+        .house-door {
+            position: absolute;
+            width: 20px;
+            height: 30px;
+            background: #8b4513;
+            border: 1.5px solid #222;
+            border-radius: 3px;
+            bottom: 0;
+            left: 28px;
+        }
+
         .rocket {
-            width: 65px;
-            height: 110px;
+            width: 55px;
+            height: 95px;
             background: linear-gradient(to right, #f44336, #d32f2f);
-            border-radius: 32px 32px 0 0;
-            bottom: -110px;
+            border-radius: 28px 28px 0 0;
+            bottom: -95px;
             transition: bottom 3s ease-in-out;
             position: absolute;
             z-index: 15;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
-        
+
         .rocket-fin {
             position: absolute;
-            width: 18px;
-            height: 35px;
+            width: 15px;
+            height: 30px;
             background: linear-gradient(to bottom, #2196f3, #0d47a1);
             bottom: 0;
         }
-        
+
         .rocket-fin.left {
-            left: -12px;
-            border-radius: 5px 0 0 5px;
+            left: -10px;
+            border-radius: 4px 0 0 4px;
         }
-        
+
         .rocket-fin.right {
-            right: -12px;
-            border-radius: 0 5px 5px 0;
+            right: -10px;
+            border-radius: 0 4px 4px 0;
         }
-        
+
         .rocket-engine {
             position: absolute;
-            width: 25px;
-            height: 35px;
+            width: 20px;
+            height: 30px;
             background: linear-gradient(to bottom, #ff9800, #f57c00);
-            bottom: -35px;
-            left: 20px;
-            border-radius: 0 0 12px 12px;
+            bottom: -30px;
+            left: 18px;
+            border-radius: 0 0 10px 10px;
         }
-        
+
         .rocket-fire {
             position: absolute;
-            width: 30px;
-            height: 60px;
+            width: 25px;
+            height: 50px;
             background: linear-gradient(to top, #ffeb3b, #ff9800, #f44336, #ffeb3b);
-            bottom: -95px;
-            left: 17px;
+            bottom: -80px;
+            left: 15px;
             border-radius: 0 0 50% 50%;
             animation: fire 0.4s infinite alternate;
             filter: blur(1px);
         }
-        
+
         @keyframes fire {
-            from { height: 50px; opacity: 0.8; }
-            to { height: 65px; opacity: 1; }
+            from { height: 45px; opacity: 0.8; }
+            to { height: 55px; opacity: 1; }
         }
-        
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
         .space-background {
             position: absolute;
             top: 0;
@@ -684,237 +864,29 @@
             transition: opacity 2s;
             z-index: 5;
         }
-        
+
         .star {
             position: absolute;
             background: white;
             border-radius: 50%;
             animation: twinkle 3s infinite;
         }
-        
+
         @keyframes twinkle {
             0%, 100% { opacity: 0.3; }
             50% { opacity: 1; }
         }
-        
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            margin-top: 20px;
-            background: rgba(0, 0, 0, 0.6);
-            padding: 15px;
-            border-radius: 12px;
-            border: 2px solid #4a90e2;
-        }
-        
-        .stat-box {
-            text-align: center;
-            padding: 10px;
-            background: rgba(255, 204, 0, 0.1);
-            border-radius: 8px;
-            border: 1px solid rgba(255, 204, 0, 0.3);
-        }
-        
-        .stat-value {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #ffcc00;
-            text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
-        }
-        
-        .stat-label {
-            font-size: 0.85rem;
-            opacity: 0.9;
-            margin-top: 5px;
-        }
-        
-        .instructions {
-            background: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 15px;
-            margin-top: 20px;
-            border: 3px solid #4a90e2;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-        
-        .instructions h2 {
-            color: #ffcc00;
-            margin-bottom: 15px;
-            text-align: center;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-        }
-        
-        .instructions ul {
-            padding-left: 20px;
-            margin-bottom: 15px;
-        }
-        
-        .instructions li {
-            margin-bottom: 10px;
-            line-height: 1.6;
-            font-size: 0.95rem;
-        }
-        
-        .space-btn {
-            display: block;
-            width: 100%;
-            padding: 18px;
-            background: linear-gradient(135deg, #9c27b0, #e91e63);
-            color: white;
-            border: none;
-            border-radius: 12px;
-            font-size: 1.3rem;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 15px;
-            transition: all 0.3s ease;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .space-btn:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 10px 20px rgba(156, 39, 176, 0.7);
-        }
-        
-        .space-btn:active {
-            transform: scale(0.98);
-        }
-        
-        .lego-logo {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 2.2rem;
-            font-weight: bold;
-            color: #ffcc00;
-            text-shadow: 0 0 15px rgba(255, 204, 0, 0.7);
-            z-index: 100;
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-        
-        /* Minifigure Customization Panel */
-        .customization-panel {
-            margin-top: 25px;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.6);
-            border-radius: 12px;
-            border: 2px solid #ffcc00;
-            overflow-y: auto;
-            max-height: 380px;
-        }
-        
-        .customization-panel::-webkit-scrollbar {
-            width: 10px;
-        }
-        
-        .customization-panel::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.4);
-            border-radius: 5px;
-        }
-        
-        .customization-panel::-webkit-scrollbar-thumb {
-            background: linear-gradient(to bottom, #ffcc00, #ff9800);
-            border-radius: 5px;
-        }
-        
-        .customization-section {
-            margin-bottom: 25px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid rgba(255, 204, 0, 0.3);
-        }
-        
-        .customization-section:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-        }
-        
-        .customization-section h3 {
-            color: #ffcc00;
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-            text-align: center;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-        }
-        
-        .color-options {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 10px;
-            justify-content: center;
-        }
-        
-        .color-option {
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            cursor: pointer;
-            border: 3px solid #444;
-            transition: all 0.3s ease;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .color-option:hover {
-            transform: scale(1.2) rotate(5deg);
-            box-shadow: 0 5px 15px rgba(255, 204, 0, 0.5);
-            z-index: 2;
-        }
-        
-        .color-option.selected {
-            border: 3px solid #ffcc00;
-            box-shadow: 0 0 20px rgba(255, 204, 0, 0.8);
-            transform: scale(1.15);
-        }
-        
-        .preset-btn {
-            width: 100%;
-            padding: 14px;
-            margin-top: 15px;
-            background: linear-gradient(135deg, #43a047, #2e7d32);
-            color: white;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-        
-        .preset-btn:hover {
-            background: linear-gradient(135deg, #66bb6a, #4caf50);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(67, 160, 71, 0.5);
-        }
-        
-        .minifigure-preview {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
-            height: 120px;
-        }
-        
-        /* Delete button for items */
+
         .delete-btn {
             position: absolute;
-            top: -10px;
-            right: -10px;
-            width: 25px;
-            height: 25px;
+            top: -8px;
+            right: -8px;
+            width: 20px;
+            height: 20px;
             background: #e53935;
             border-radius: 50%;
             color: white;
-            font-size: 12px;
+            font-size: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -922,108 +894,65 @@
             opacity: 0;
             transition: opacity 0.2s;
             z-index: 25;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
         }
-        
-        .lego-item:hover .delete-btn {
+
+        .lego-item:hover .delete-btn,
+        .lego-item:active .delete-btn {
             opacity: 1;
         }
-        
-        /* Animations */
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .game-area {
-                flex-direction: column;
-            }
-            
-            .world-view {
-                height: 450px;
-            }
-            
-            h1 {
-                font-size: 2.5rem;
-            }
-            
-            .controls {
-                padding: 15px;
-                max-height: 450px;
-            }
-            
-            .customization-panel {
-                max-height: 320px;
-                padding: 15px;
-            }
-            
-            .color-option {
-                width: 30px;
-                height: 30px;
-            }
-            
-            .install-banner {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .install-btn {
-                margin-left: 0;
-                margin-top: 10px;
-                width: 100%;
-            }
-        }
-        
+
+        /* Responsive & Mobile Optimizations */
         @media (max-width: 480px) {
-            .build-options {
-                grid-template-columns: 1fr;
-            }
-            
-            .stats {
-                grid-template-columns: 1fr;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .world-view {
-                height: 400px;
-            }
+            h1 { font-size: 1.8rem; }
+            .section-title { font-size: 1.3rem; }
+            .stat-value { font-size: 1.5rem; }
+            .space-btn, .preset-btn { font-size: 1.2rem; }
+            .build-btn { min-height: 60px; }
+            .world-view { height: 380px; }
+            .minifigure-preview { height: 80px; }
+            .customization-panel { max-height: 280px; }
+            .install-banner { font-size: 13px; }
+        }
+
+        /* iOS Safari */
+        @supports (-webkit-touch-callout: none) {
+            .world-view { height: 400px; }
+            .instructions { padding: 14px; }
         }
     </style>
 </head>
 <body>
-    <div class="lego-logo">LEGO<sup>®</sup></div>
-    
-    <!-- Animated background particles -->
+    <!-- Connection Banner -->
+    <div class="connection-banner" id="connectionBanner">
+        <div class="connection-status">
+            <div class="status-dot" id="connectionStatus"></div>
+            <span id="connectionText">Not connected</span>
+        </div>
+        <div class="connection-controls">
+            <button class="connection-btn" id="hostBtn">Host Game</button>
+            <button class="connection-btn" id="joinBtn">Join Game</button>
+        </div>
+    </div>
+
     <div class="particles" id="particles"></div>
-    
+
     <div class="container">
         <header>
-            <h1>Lego World</h1>
-            <p class="subtitle">Build your world on Earth, then launch to space with your astronaut minifigure! Customize your character and watch them transform for space travel.</p>
+            <h1>Lego World - Multiplayer</h1>
+            <p class="subtitle">Build your world with friends! Play together on the same Wi-Fi network.</p>
         </header>
-        
+
         <div class="game-area">
             <div class="world-view">
                 <div class="world-map"></div>
                 <div class="items-container" id="itemsContainer"></div>
-                
-                <div class="lego-item rocket" id="rocket" style="left: 120px;">
-                    <div class="rocket-fin left"></div>
-                    <div class="rocket-fin right"></div>
-                    <div class="rocket-engine"></div>
-                    <div class="rocket-fire"></div>
-                </div>
-                
+                <div class="lego-item rocket" id="rocket" style="left: 50%; transform: translateX(-50%);"></div>
                 <div class="space-background" id="spaceBackground"></div>
             </div>
-            
+
             <div class="controls">
-                <h2 class="section-title">Build Options</h2>
+                <h2 class="section-title">Build</h2>
                 <div class="build-options">
                     <button class="build-btn active" data-type="car">
                         <i class="fas fa-car"></i>Car
@@ -1035,15 +964,15 @@
                         <i class="fas fa-home"></i>House
                     </button>
                     <button class="build-btn" data-type="minifigure">
-                        <i class="fas fa-user"></i>Your Character
+                        <i class="fas fa-user"></i>Minifigure
                     </button>
                 </div>
-                
-                <h2 class="section-title" style="margin-top: 25px;">World Stats</h2>
+
+                <h2 class="section-title">Stats</h2>
                 <div class="stats">
                     <div class="stat-box">
                         <div class="stat-value" id="bricksCount">0</div>
-                        <div class="stat-label">Creations</div>
+                        <div class="stat-label">Built</div>
                     </div>
                     <div class="stat-box">
                         <div class="stat-value" id="vehiclesCount">0</div>
@@ -1054,10 +983,10 @@
                         <div class="stat-label">Structures</div>
                     </div>
                 </div>
-                
+
                 <div class="customization-panel">
-                    <h2 class="section-title">Customize Your Minifigure</h2>
-                    
+                    <h2 class="section-title">Customize</h2>
+
                     <div class="customization-section">
                         <h3>Head</h3>
                         <div class="color-options">
@@ -1069,7 +998,7 @@
                             <div class="color-option" style="background-color: #ffd166;" data-color="tan" data-part="head"></div>
                         </div>
                     </div>
-                    
+
                     <div class="customization-section">
                         <h3>Body</h3>
                         <div class="color-options">
@@ -1081,7 +1010,7 @@
                             <div class="color-option" style="background-color: #000;" data-color="black" data-part="body"></div>
                         </div>
                     </div>
-                    
+
                     <div class="customization-section">
                         <h3>Legs</h3>
                         <div class="color-options">
@@ -1093,7 +1022,7 @@
                             <div class="color-option" style="background-color: #9c27b0;" data-color="purple" data-part="legs"></div>
                         </div>
                     </div>
-                    
+
                     <div class="customization-section">
                         <h3>Hair</h3>
                         <div class="color-options">
@@ -1105,7 +1034,7 @@
                             <div class="color-option" style="background-color: #795548;" data-color="tan" data-part="hair"></div>
                         </div>
                     </div>
-                    
+
                     <div class="customization-section">
                         <h3>Face</h3>
                         <div class="color-options">
@@ -1116,11 +1045,11 @@
                             <div class="color-option" style="background-color: #9c27b0;" data-color="sleepy" data-part="face"></div>
                         </div>
                     </div>
-                    
+
                     <div class="preset-btn" id="randomMinifigure">
                         <i class="fas fa-random"></i> Random Minifigure
                     </div>
-                    
+
                     <div class="minifigure-preview">
                         <div class="minifigure" id="previewMinifigure">
                             <div class="minifigure-head">
@@ -1138,102 +1067,230 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <button class="space-btn" id="launchBtn">
                     <i class="fas fa-rocket"></i> Launch to Space!
                 </button>
             </div>
         </div>
-        
+
         <div class="instructions">
-            <h2>How to Play</h2>
+            <h2>How to Play Multiplayer</h2>
             <ul>
-                <li><strong>Create your character</strong> using the "Your Character" option</li>
-                <li><strong>Customize</strong> your minifigure with colors and expressions</li>
-                <li><strong>Click on the world</strong> to place your character</li>
-                <li><strong>Launch to space</strong> to see your character transform into an astronaut!</li>
-                <li><strong>Return to Earth</strong> to switch back to your regular minifigure</li>
+                <li>One player taps "Host Game" to create a room</li>
+                <li>Other players tap "Join Game" and enter the room code</li>
+                <li>See other players' minifigures in real-time!</li>
+                <li>Build together and launch to space as a team!</li>
             </ul>
-            <p>Tip: Your character will now appear on the map exactly where you click!</p>
+            <p>Tip: All players must be on the same Wi-Fi network.</p>
         </div>
     </div>
-    
+
     <!-- Install Banner -->
     <div class="install-banner" id="installBanner">
         <div class="install-text">
-            <h3>Install Lego World App</h3>
-            <p>Add to your home screen for the best experience</p>
+            <strong>Add to Home Screen</strong><br>
+            Tap the share button → “Add to Home Screen”
         </div>
-        <button class="install-btn" id="installBtn">Install</button>
+        <button class="install-btn" id="installBtn">Install App</button>
     </div>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
     <script>
         // PWA Installation Logic
         let deferredPrompt;
         
         window.addEventListener('beforeinstallprompt', (e) => {
-            // Prevent the mini-infobar from appearing on mobile
             e.preventDefault();
-            // Stash the event so it can be triggered later
             deferredPrompt = e;
-            // Show the install button
             const installBanner = document.getElementById('installBanner');
             installBanner.classList.add('show');
         });
-        
+
         document.getElementById('installBtn').addEventListener('click', async () => {
-            // Hide the install banner
             const installBanner = document.getElementById('installBanner');
             installBanner.classList.remove('show');
             
-            // Show the install prompt
             if (deferredPrompt) {
                 deferredPrompt.prompt();
-                // Wait for the user to respond to the prompt
                 const { outcome } = await deferredPrompt.userChoice;
                 if (outcome === 'accepted') {
-                    console.log('User accepted the install prompt');
-                } else {
-                    console.log('User dismissed the install prompt');
+                    console.log('User accepted install');
                 }
                 deferredPrompt = null;
             }
         });
-        
-        // Close install banner if dismissed
-        document.getElementById('installBanner').addEventListener('click', (e) => {
-            if (e.target !== document.getElementById('installBtn')) {
-                document.getElementById('installBanner').classList.remove('show');
-            }
-        });
-        
+
         // Service Worker Registration
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('sw.js')
-                    .then((registration) => {
-                        console.log('SW registered: ', registration);
-                    })
-                    .catch((registrationError) => {
-                        console.log('SW registration failed: ', registrationError);
-                    });
+                navigator.serviceWorker.register('sw.js').catch(console.error);
             });
         }
-        
-        // Main Game Logic
-        document.addEventListener('DOMContentLoaded', function() {
-            // Create background particles
-            const particlesContainer = document.getElementById('particles');
-            for (let i = 0; i < 50; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                particle.style.left = `${Math.random() * 100}%`;
-                particle.style.top = `${Math.random() * 100}%`;
-                particle.style.animationDelay = `${Math.random() * 15}s`;
-                particle.style.opacity = Math.random() * 0.7 + 0.3;
-                particlesContainer.appendChild(particle);
+
+        // Create particles
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 30; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.top = `${Math.random() * 100}%`;
+            particle.style.animationDelay = `${Math.random() * 15}s`;
+            particle.style.opacity = Math.random() * 0.6 + 0.2;
+            particlesContainer.appendChild(particle);
+        }
+
+        // Multiplayer Connection State
+        let isHost = false;
+        let isJoined = false;
+        let peerConnection = null;
+        let dataChannel = null;
+        let roomCode = null;
+        let localPlayerId = 'player-' + Math.random().toString(36).substr(2, 9);
+        let playerName = prompt("Enter your name:", "Player") || "Player";
+        const remotePlayers = {};
+        const connectionStatus = document.getElementById('connectionStatus');
+        const connectionText = document.getElementById('connectionText');
+
+        // Create a simple signaling server using WebRTC data channels
+        // In a real app, you'd use a proper signaling server, but for local network we can use a simple approach
+        function createPeerConnection(isInitiator) {
+            const config = {
+                iceServers: [
+                    { urls: 'stun:stun.l.google.com:19302' },
+                    { urls: 'stun:stun1.l.google.com:19302' }
+                ]
+            };
+            
+            peerConnection = new RTCPeerConnection(config);
+            
+            // Create data channel for sending player positions
+            if (isInitiator) {
+                dataChannel = peerConnection.createDataChannel('lego-data');
+                setupDataChannel(dataChannel);
             }
             
+            peerConnection.ondatachannel = event => {
+                dataChannel = event.channel;
+                setupDataChannel(dataChannel);
+            };
+            
+            peerConnection.onicecandidate = event => {
+                if (event.candidate) {
+                    // In a real app, you'd send this to the other peer via signaling server
+                    console.log('ICE candidate:', event.candidate);
+                }
+            };
+            
+            return peerConnection;
+        }
+        
+        function setupDataChannel(channel) {
+            channel.onopen = () => {
+                console.log('Data channel opened');
+                connectionStatus.classList.add('connected');
+                connectionText.textContent = isHost ? 'Hosting game...' : 'Connected!';
+                updateConnectionStatus();
+            };
+            
+            channel.onmessage = event => {
+                const data = JSON.parse(event.data);
+                handleNetworkMessage(data);
+            };
+            
+            channel.onerror = error => {
+                console.error('Data channel error:', error);
+            };
+        }
+        
+        function handleNetworkMessage(data) {
+            if (data.type === 'player-update') {
+                if (data.playerId !== localPlayerId) {
+                    updateRemotePlayer(data.playerId, data.position, data.customization);
+                }
+            } else if (data.type === 'player-joined') {
+                if (data.playerId !== localPlayerId) {
+                    // Create remote player
+                    createRemotePlayer(data.playerId, data.name, data.position, data.customization);
+                }
+            } else if (data.type === 'player-left') {
+                if (remotePlayers[data.playerId]) {
+                    remotePlayers[data.playerId].element.remove();
+                    delete remotePlayers[data.playerId];
+                }
+            }
+        }
+        
+        function updateConnectionStatus() {
+            if (isHost || isJoined) {
+                connectionStatus.classList.add('connected');
+                connectionText.textContent = isHost ? 'Hosting game...' : 'Connected!';
+            } else {
+                connectionStatus.classList.remove('connected');
+                connectionText.textContent = 'Not connected';
+            }
+        }
+        
+        // Host Game Button
+        document.getElementById('hostBtn').addEventListener('click', () => {
+            if (isHost || isJoined) return;
+            
+            isHost = true;
+            roomCode = Math.random().toString(36).substr(2, 6).toUpperCase();
+            alert(`Room Code: ${roomCode}\nShare this code with friends to join!`);
+            
+            createPeerConnection(true);
+            updateConnectionStatus();
+        });
+        
+        // Join Game Button
+        document.getElementById('joinBtn').addEventListener('click', () => {
+            if (isHost || isJoined) return;
+            
+            const code = prompt("Enter room code:");
+            if (!code) return;
+            
+            roomCode = code.toUpperCase();
+            isJoined = true;
+            
+            createPeerConnection(false);
+            updateConnectionStatus();
+            
+            // In a real app, you'd signal to the host that you want to join
+            // For this demo, we'll simulate the connection
+            setTimeout(() => {
+                if (dataChannel) {
+                    // Send join message
+                    const joinMessage = {
+                        type: 'player-joined',
+                        playerId: localPlayerId,
+                        name: playerName,
+                        position: { x: 200, y: 300 },
+                        customization: getCurrentCustomization()
+                    };
+                    dataChannel.send(JSON.stringify(joinMessage));
+                }
+            }, 1000);
+        });
+        
+        function getCurrentCustomization() {
+            return {
+                head: getSelectedColor('head') || 'skin',
+                body: getSelectedColor('body') || 'red',
+                legs: getSelectedColor('legs') || 'blue',
+                hair: getSelectedColor('hair') || 'brown',
+                face: getSelectedColor('face') || 'neutral'
+            };
+        }
+        
+        function getSelectedColor(part) {
+            return document.querySelector(`.color-option[data-part="${part}"].selected`)?.dataset.color || null;
+        }
+
+        // Main Game Logic
+        document.addEventListener('DOMContentLoaded', function() {
             const world = document.querySelector('.world-view');
             const itemsContainer = document.getElementById('itemsContainer');
             const buildBtns = document.querySelectorAll('.build-btn');
@@ -1244,7 +1301,6 @@
             const randomMinifigureBtn = document.getElementById('randomMinifigure');
             const colorOptions = document.querySelectorAll('.color-option');
             
-            // Stats counters
             const bricksCount = document.getElementById('bricksCount');
             const vehiclesCount = document.getElementById('vehiclesCount');
             const structuresCount = document.getElementById('structuresCount');
@@ -1253,53 +1309,76 @@
             let isDragging = false;
             let selectedElement = null;
             let offsetX, offsetY;
-            let itemCounters = {
-                car: 0,
-                helicopter: 0,
-                house: 0,
-                minifigure: 0
-            };
-            
-            // Track the player's minifigure
+            let itemCounters = { car: 0, helicopter: 0, house: 0, minifigure: 0 };
             let playerMinifigure = null;
             let isInSpace = false;
-            
-            // Set active build button
-            buildBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    buildBtns.forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                    currentBuildType = this.dataset.type;
-                });
-            });
-            
-            // World click to place items
-            world.addEventListener('click', function(e) {
+
+            // Handle touch/click to place items
+            world.addEventListener('touchstart', handlePlace, { passive: true });
+            world.addEventListener('mousedown', handlePlace, { passive: true });
+
+            function handlePlace(e) {
                 if (e.target === world || e.target === itemsContainer || e.target.classList.contains('world-map')) {
-                    const x = e.clientX - world.getBoundingClientRect().left;
-                    const y = e.clientY - world.getBoundingClientRect().top;
-                    createLegoItem(currentBuildType, x, y);
+                    const rect = world.getBoundingClientRect();
+                    const x = e.type === 'touchstart' ? e.touches[0].clientX - rect.left : e.clientX - rect.left;
+                    const y = e.type === 'touchstart' ? e.touches[0].clientY - rect.top : e.clientY - rect.top;
+                    
+                    if (currentBuildType === 'minifigure') {
+                        // Create player minifigure
+                        createLegoItem(currentBuildType, x, y);
+                        // Send position update to other players
+                        if (dataChannel && (isHost || isJoined)) {
+                            const positionUpdate = {
+                                type: 'player-update',
+                                playerId: localPlayerId,
+                                position: { x, y },
+                                customization: getCurrentCustomization()
+                            };
+                            dataChannel.send(JSON.stringify(positionUpdate));
+                        }
+                    } else {
+                        createLegoItem(currentBuildType, x, y);
+                    }
                 }
-            });
-            
-            // Create Lego item based on type
+            }
+
             function createLegoItem(type, x, y) {
                 const item = document.createElement('div');
                 item.className = `lego-item ${type}`;
                 item.style.left = `${x}px`;
                 item.style.top = `${y}px`;
                 
-                // Add delete button
+                // For player minifigure, add name tag
+                if (type === 'minifigure') {
+                    const nameTag = document.createElement('div');
+                    nameTag.className = 'player-name';
+                    nameTag.textContent = playerName;
+                    item.appendChild(nameTag);
+                }
+                
                 const deleteBtn = document.createElement('div');
                 deleteBtn.className = 'delete-btn';
                 deleteBtn.innerHTML = '×';
-                deleteBtn.addEventListener('click', function(e) {
+                deleteBtn.addEventListener('touchstart', (e) => e.stopPropagation());
+                deleteBtn.addEventListener('mousedown', (e) => e.stopPropagation());
+                deleteBtn.addEventListener('click', (e) => {
                     e.stopPropagation();
+                    if (type === 'minifigure') {
+                        playerMinifigure = null;
+                        // Notify other players
+                        if (dataChannel && (isHost || isJoined)) {
+                            const playerLeft = {
+                                type: 'player-left',
+                                playerId: localPlayerId
+                            };
+                            dataChannel.send(JSON.stringify(playerLeft));
+                        }
+                    }
                     item.remove();
                     updateStats();
                 });
                 item.appendChild(deleteBtn);
-                
+
                 if (type === 'car') {
                     item.innerHTML = `
                         <div class="car-top"></div>
@@ -1324,19 +1403,26 @@
                     itemCounters.house++;
                     structuresCount.textContent = itemCounters.house + itemCounters.minifigure;
                 } else if (type === 'minifigure') {
-                    // Check if player already has a minifigure and remove it
                     if (playerMinifigure) {
+                        // Notify other players about leaving
+                        if (dataChannel && (isHost || isJoined)) {
+                            const playerLeft = {
+                                type: 'player-left',
+                                playerId: localPlayerId
+                            };
+                            dataChannel.send(JSON.stringify(playerLeft));
+                        }
                         playerMinifigure.remove();
                     }
                     
-                    const headColor = document.querySelector(`.color-option[data-part="head"].selected`)?.dataset.color || 'skin';
-                    const bodyColor = document.querySelector(`.color-option[data-part="body"].selected`)?.dataset.color || 'red';
-                    const legsColor = document.querySelector(`.color-option[data-part="legs"].selected`)?.dataset.color || 'blue';
-                    const hairColor = document.querySelector(`.color-option[data-part="hair"].selected`)?.dataset.color || 'brown';
-                    const faceType = document.querySelector(`.color-option[data-part="face"].selected`)?.dataset.color || 'neutral';
-                    
-                    // Create the minifigure HTML
+                    const headColor = getSelectedColor('head') || 'skin';
+                    const bodyColor = getSelectedColor('body') || 'red';
+                    const legsColor = getSelectedColor('legs') || 'blue';
+                    const hairColor = getSelectedColor('hair') || 'brown';
+                    const faceType = getSelectedColor('face') || 'neutral';
+
                     item.innerHTML = `
+                        <div class="player-name">${playerName}</div>
                         <div class="minifigure-head">
                             <div class="minifigure-face">
                                 <div class="minifigure-eye"></div>
@@ -1350,210 +1436,187 @@
                         <div class="minifigure-legs"></div>
                         <div class="minifigure-feet"></div>
                     `;
-                    
-                    // Apply customization colors
+
                     const head = item.querySelector('.minifigure-head');
                     const body = item.querySelector('.minifigure-body');
                     const legs = item.querySelector('.minifigure-legs');
                     const hair = document.createElement('div');
                     hair.className = 'minifigure-hair';
                     head.appendChild(hair);
-                    
+
                     head.style.backgroundColor = getColorValue(headColor);
                     body.style.backgroundColor = getColorValue(bodyColor);
                     legs.style.backgroundColor = getColorValue(legsColor);
                     hair.style.backgroundColor = getColorValue(hairColor);
-                    
-                    // Apply face expression
+
                     const face = item.querySelector('.minifigure-face');
                     face.innerHTML = '';
                     const eye1 = document.createElement('div');
                     const eye2 = document.createElement('div');
                     const mouth = document.createElement('div');
-                    
                     eye1.className = 'minifigure-eye';
                     eye2.className = 'minifigure-eye';
                     mouth.className = 'minifigure-mouth';
-                    
-                    if (faceType === 'neutral') {
-                        // Default
-                    } else if (faceType === 'smile') {
-                        mouth.style.width = '14px';
-                        mouth.style.height = '2px';
+
+                    if (faceType === 'smile') {
+                        mouth.style.width = '10px';
+                        mouth.style.height = '1.5px';
                         mouth.style.borderRadius = '50%';
                         mouth.style.transform = 'rotate(10deg)';
                     } else if (faceType === 'angry') {
                         eye1.style.transform = 'rotate(15deg)';
                         eye2.style.transform = 'rotate(-15deg)';
-                        mouth.style.width = '14px';
+                        mouth.style.width = '10px';
                         mouth.style.height = '1px';
                         mouth.style.transform = 'rotate(-15deg)';
                     } else if (faceType === 'surprised') {
-                        eye1.style.width = '7px';
-                        eye1.style.height = '7px';
-                        eye2.style.width = '7px';
-                        eye2.style.height = '7px';
-                        mouth.style.width = '12px';
-                        mouth.style.height = '12px';
+                        eye1.style.width = '5px';
+                        eye1.style.height = '5px';
+                        eye2.style.width = '5px';
+                        eye2.style.height = '5px';
+                        mouth.style.width = '8px';
+                        mouth.style.height = '8px';
                         mouth.style.borderRadius = '50%';
                         mouth.style.backgroundColor = 'transparent';
-                        mouth.style.border = '2px solid #000';
+                        mouth.style.border = '1px solid #000';
                     } else if (faceType === 'sleepy') {
-                        eye1.style.height = '2px';
-                        eye2.style.height = '2px';
+                        eye1.style.height = '1.5px';
+                        eye2.style.height = '1.5px';
                         eye1.style.borderRadius = '50%';
                         eye2.style.borderRadius = '50%';
                         eye1.style.transform = 'rotate(15deg)';
                         eye2.style.transform = 'rotate(-15deg)';
                     }
-                    
+
                     face.appendChild(eye1);
                     face.appendChild(eye2);
                     face.appendChild(mouth);
-                    
-                    // Add delete button to the minifigure
-                    const minifigureDeleteBtn = document.createElement('div');
-                    minifigureDeleteBtn.className = 'delete-btn';
-                    minifigureDeleteBtn.innerHTML = '×';
-                    minifigureDeleteBtn.addEventListener('click', function(e) {
-                        e.stopPropagation();
-                        item.remove();
-                        playerMinifigure = null;
-                        updateStats();
-                    });
-                    item.appendChild(minifigureDeleteBtn);
-                    
-                    // Set as player minifigure
+
                     playerMinifigure = item;
-                    itemCounters.minifigure = 1; // Only one player character
+                    itemCounters.minifigure = 1;
                     structuresCount.textContent = itemCounters.house + itemCounters.minifigure;
                 }
-                
-                // Add the item to the items container
+
                 itemsContainer.appendChild(item);
-                
-                // Make draggable (except rocket)
-                if (type !== 'rocket') {
-                    item.addEventListener('mousedown', startDrag);
-                    item.addEventListener('touchstart', startDrag, { passive: false });
-                }
-                
-                // Update stats
                 updateStats();
+
+                // Make draggable
+                item.addEventListener('touchstart', startDrag, { passive: false });
+                item.addEventListener('mousedown', startDrag, { passive: false });
             }
-            
+
+            function getColorValue(color) {
+                const map = {
+                    'skin': '#f5d6b5', 'brown': '#8b4513', 'yellow': '#ffcc00',
+                    'red': '#ff6b6b', 'blue': '#4ecdc4', 'tan': '#ffd166',
+                    'black': '#000', 'white': '#ffffff', 'green': '#4caf50',
+                    'purple': '#9c27b0', 'orange': '#ff9800'
+                };
+                return map[color] || color;
+            }
+
             function updateStats() {
                 const total = itemCounters.car + itemCounters.helicopter + itemCounters.house + (playerMinifigure ? 1 : 0);
                 bricksCount.textContent = total;
             }
-            
-            // Drag functionality
+
             function startDrag(e) {
                 isDragging = true;
                 selectedElement = e.target.closest('.lego-item');
-                
                 if (!selectedElement) return;
-                
-                if (e.type === 'touchstart') {
-                    e.preventDefault();
-                    offsetX = e.touches[0].clientX - selectedElement.getBoundingClientRect().left;
-                    offsetY = e.touches[0].clientY - selectedElement.getBoundingClientRect().top;
-                } else {
-                    offsetX = e.clientX - selectedElement.getBoundingClientRect().left;
-                    offsetY = e.clientY - selectedElement.getBoundingClientRect().top;
-                }
-                
-                document.addEventListener('mousemove', dragElement);
+
+                const rect = selectedElement.getBoundingClientRect();
+                offsetX = e.type === 'touchstart' ? e.touches[0].clientX - rect.left : e.clientX - rect.left;
+                offsetY = e.type === 'touchstart' ? e.touches[0].clientY - rect.top : e.clientY - rect.top;
+
+                e.preventDefault(); // Prevent scrolling during drag
                 document.addEventListener('touchmove', dragElement, { passive: false });
-                document.addEventListener('mouseup', stopDrag);
+                document.addEventListener('mousemove', dragElement);
                 document.addEventListener('touchend', stopDrag);
+                document.addEventListener('mouseup', stopDrag);
             }
-            
+
             function dragElement(e) {
                 if (!isDragging || !selectedElement) return;
-                
                 e.preventDefault();
+
+                const rect = world.getBoundingClientRect();
+                const x = (e.type === 'touchmove' ? e.touches[0].clientX : e.clientX) - rect.left - offsetX;
+                const y = (e.type === 'touchmove' ? e.touches[0].clientY : e.clientY) - rect.top - offsetY;
+
+                const maxW = rect.width - selectedElement.offsetWidth;
+                const maxH = rect.height - selectedElement.offsetHeight;
+
+                selectedElement.style.left = `${Math.max(0, Math.min(x, maxW))}px`;
+                selectedElement.style.top = `${Math.max(0, Math.min(y, maxH))}px`;
                 
-                let clientX, clientY;
-                
-                if (e.type === 'touchmove') {
-                    clientX = e.touches[0].clientX;
-                    clientY = e.touches[0].clientY;
-                } else {
-                    clientX = e.clientX;
-                    clientY = e.clientY;
+                // If dragging player minifigure, update other players
+                if (selectedElement.classList.contains('minifigure') && selectedElement === playerMinifigure) {
+                    if (dataChannel && (isHost || isJoined)) {
+                        const positionUpdate = {
+                            type: 'player-update',
+                            playerId: localPlayerId,
+                            position: { 
+                                x: parseInt(selectedElement.style.left),
+                                y: parseInt(selectedElement.style.top)
+                            },
+                            customization: getCurrentCustomization()
+                        };
+                        dataChannel.send(JSON.stringify(positionUpdate));
+                    }
                 }
-                
-                const worldRect = world.getBoundingClientRect();
-                let x = clientX - worldRect.left - offsetX;
-                let y = clientY - worldRect.top - offsetY;
-                
-                // Boundary checks
-                x = Math.max(0, Math.min(x, worldRect.width - selectedElement.offsetWidth));
-                y = Math.max(0, Math.min(y, worldRect.height - selectedElement.offsetHeight));
-                
-                selectedElement.style.left = `${x}px`;
-                selectedElement.style.top = `${y}px`;
             }
-            
+
             function stopDrag() {
                 isDragging = false;
                 selectedElement = null;
-                document.removeEventListener('mousemove', dragElement);
                 document.removeEventListener('touchmove', dragElement);
-                document.removeEventListener('mouseup', stopDrag);
+                document.removeEventListener('mousemove', dragElement);
                 document.removeEventListener('touchend', stopDrag);
+                document.removeEventListener('mouseup', stopDrag);
             }
-            
-            // Color customization
+
+            buildBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    buildBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentBuildType = btn.dataset.type;
+                });
+            });
+
             colorOptions.forEach(option => {
-                option.addEventListener('click', function() {
-                    if (this.classList.contains('selected')) {
-                        this.classList.remove('selected');
-                        return;
-                    }
-                    
-                    const part = this.dataset.part;
-                    document.querySelectorAll(`.color-option[data-part="${part}"]`).forEach(opt => {
-                        opt.classList.remove('selected');
-                    });
-                    
-                    this.classList.add('selected');
+                option.addEventListener('click', () => {
+                    const part = option.dataset.part;
+                    document.querySelectorAll(`.color-option[data-part="${part}"]`).forEach(o => o.classList.remove('selected'));
+                    option.classList.add('selected');
                     updatePreview();
                 });
             });
-            
+
             function updatePreview() {
                 const head = previewMinifigure.querySelector('.minifigure-head');
                 const body = previewMinifigure.querySelector('.minifigure-body');
                 const legs = previewMinifigure.querySelector('.minifigure-legs');
                 const hair = previewMinifigure.querySelector('.minifigure-hair');
                 const face = previewMinifigure.querySelector('.minifigure-face');
-                
-                const headColor = document.querySelector(`.color-option[data-part="head"].selected`)?.dataset.color || 'skin';
-                const bodyColor = document.querySelector(`.color-option[data-part="body"].selected`)?.dataset.color || 'red';
-                const legsColor = document.querySelector(`.color-option[data-part="legs"].selected`)?.dataset.color || 'blue';
-                const hairColor = document.querySelector(`.color-option[data-part="hair"].selected`)?.dataset.color || 'brown';
-                const faceType = document.querySelector(`.color-option[data-part="face"].selected`)?.dataset.color || 'neutral';
-                
-                head.style.backgroundColor = getColorValue(headColor);
-                body.style.backgroundColor = getColorValue(bodyColor);
-                legs.style.backgroundColor = getColorValue(legsColor);
-                if (hair) hair.style.backgroundColor = getColorValue(hairColor);
-                
+
+                head.style.backgroundColor = getColorValue(getSelectedColor('head') || 'skin');
+                body.style.backgroundColor = getColorValue(getSelectedColor('body') || 'red');
+                legs.style.backgroundColor = getColorValue(getSelectedColor('legs') || 'blue');
+                if (hair) hair.style.backgroundColor = getColorValue(getSelectedColor('hair') || 'brown');
+
                 face.innerHTML = '';
                 const eye1 = document.createElement('div');
                 const eye2 = document.createElement('div');
                 const mouth = document.createElement('div');
-                
                 eye1.className = 'minifigure-eye';
                 eye2.className = 'minifigure-eye';
                 mouth.className = 'minifigure-mouth';
-                
-                if (faceType === 'neutral') {
-                } else if (faceType === 'smile') {
+
+                const faceType = getSelectedColor('face') || 'neutral';
+                if (faceType === 'smile') {
                     mouth.style.width = '10px';
-                    mouth.style.height = '2px';
+                    mouth.style.height = '1.5px';
                     mouth.style.borderRadius = '50%';
                     mouth.style.transform = 'rotate(10deg)';
                 } else if (faceType === 'angry') {
@@ -1573,38 +1636,20 @@
                     mouth.style.backgroundColor = 'transparent';
                     mouth.style.border = '1px solid #000';
                 } else if (faceType === 'sleepy') {
-                    eye1.style.height = '2px';
-                    eye2.style.height = '2px';
+                    eye1.style.height = '1.5px';
+                    eye2.style.height = '1.5px';
                     eye1.style.borderRadius = '50%';
                     eye2.style.borderRadius = '50%';
                     eye1.style.transform = 'rotate(15deg)';
                     eye2.style.transform = 'rotate(-15deg)';
                 }
-                
+
                 face.appendChild(eye1);
                 face.appendChild(eye2);
                 face.appendChild(mouth);
             }
-            
-            function getColorValue(color) {
-                const colorMap = {
-                    'skin': '#f5d6b5',
-                    'brown': '#8b4513',
-                    'yellow': '#ffcc00',
-                    'red': '#ff6b6b',
-                    'blue': '#4ecdc4',
-                    'tan': '#ffd166',
-                    'black': '#000',
-                    'white': '#ffffff',
-                    'green': '#4caf50',
-                    'purple': '#9c27b0',
-                    'orange': '#ff9800'
-                };
-                return colorMap[color] || color;
-            }
-            
-            // Random minifigure generator
-            randomMinifigureBtn.addEventListener('click', function() {
+
+            randomMinifigureBtn.addEventListener('click', () => {
                 const parts = ['head', 'body', 'legs', 'hair', 'face'];
                 const colors = {
                     'head': ['skin', 'brown', 'yellow', 'red', 'blue', 'tan'],
@@ -1613,201 +1658,161 @@
                     'hair': ['brown', 'yellow', 'black', 'white', 'red', 'tan'],
                     'face': ['neutral', 'smile', 'angry', 'surprised', 'sleepy']
                 };
-                
+
                 parts.forEach(part => {
                     const randomColor = colors[part][Math.floor(Math.random() * colors[part].length)];
                     const options = document.querySelectorAll(`.color-option[data-part="${part}"]`);
-                    
-                    options.forEach(opt => {
-                        opt.classList.remove('selected');
-                    });
-                    
-                    const selectedOption = Array.from(options).find(opt => opt.dataset.color === randomColor);
-                    if (selectedOption) {
-                        selectedOption.classList.add('selected');
-                    }
+                    options.forEach(o => o.classList.remove('selected'));
+                    const selected = Array.from(options).find(o => o.dataset.color === randomColor);
+                    if (selected) selected.classList.add('selected');
                 });
-                
                 updatePreview();
             });
-            
-            // Launch to space - transforms minifigure to astronaut
-            launchBtn.addEventListener('click', function() {
+
+            launchBtn.addEventListener('click', () => {
                 if (isInSpace) return;
-                
-                // Create stars for space background
+
                 spaceBackground.innerHTML = '';
-                for (let i = 0; i < 200; i++) {
+                for (let i = 0; i < 150; i++) {
                     const star = document.createElement('div');
                     star.classList.add('star');
-                    star.style.width = `${Math.random() * 3 + 1}px`;
+                    star.style.width = `${Math.random() * 2 + 1}px`;
                     star.style.height = star.style.width;
                     star.style.left = `${Math.random() * 100}%`;
                     star.style.top = `${Math.random() * 100}%`;
-                    star.style.opacity = Math.random() * 0.8 + 0.2;
-                    star.style.animationDelay = `${Math.random() * 5}s`;
+                    star.style.opacity = Math.random() * 0.7 + 0.3;
+                    star.style.animationDelay = `${Math.random() * 3}s`;
                     spaceBackground.appendChild(star);
                 }
-                
-                spaceBackground.style.opacity = 1;
+
+                spaceBackground.style.opacity = '1';
                 rocket.style.bottom = '100%';
                 isInSpace = true;
-                
-                // Transform minifigure to space suit if it exists
+
                 if (playerMinifigure) {
-                    transformToSpaceSuit(playerMinifigure);
+                    const x = playerMinifigure.style.left;
+                    const y = playerMinifigure.style.top;
+                    playerMinifigure.className = 'lego-item space-minifigure';
+                    playerMinifigure.style.left = x;
+                    playerMinifigure.style.top = y;
+                    playerMinifigure.innerHTML = `
+                        <div class="player-name">${playerName}</div>
+                        <div class="space-helmet">
+                            <div class="helmet-visor"></div>
+                        </div>
+                        <div class="space-body">
+                            <div class="oxygen-tank"></div>
+                            <div class="tank-hose"></div>
+                        </div>
+                        <div class="space-arm left"></div>
+                        <div class="space-arm right"></div>
+                        <div class="space-legs"></div>
+                        <div class="space-feet"></div>
+                        <div class="delete-btn">×</div>
+                    `;
                 }
-                
+
                 setTimeout(() => {
                     launchBtn.innerHTML = '<i class="fas fa-earth-americas"></i> Return to Earth';
                     launchBtn.style.background = 'linear-gradient(135deg, #43a047, #2e7d32)';
                     launchBtn.onclick = returnToEarth;
                 }, 2500);
             });
-            
-            function transformToSpaceSuit(minifigureElement) {
-                // Store original position
-                const x = minifigureElement.style.left;
-                const y = minifigureElement.style.top;
-                
-                // Create space suit version
-                const spaceSuit = document.createElement('div');
-                spaceSuit.className = 'lego-item space-minifigure';
-                spaceSuit.style.left = x;
-                spaceSuit.style.top = y;
-                spaceSuit.style.zIndex = '20';
-                
-                spaceSuit.innerHTML = `
-                    <div class="space-helmet">
-                        <div class="helmet-visor"></div>
-                    </div>
-                    <div class="space-body">
-                        <div class="oxygen-tank"></div>
-                        <div class="tank-hose"></div>
-                    </div>
-                    <div class="space-arm left"></div>
-                    <div class="space-arm right"></div>
-                    <div class="space-legs"></div>
-                    <div class="space-feet"></div>
-                    <div class="delete-btn">×</div>
-                `;
-                
-                // Add delete functionality
-                const deleteBtn = spaceSuit.querySelector('.delete-btn');
-                deleteBtn.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    spaceSuit.remove();
-                    playerMinifigure = null;
-                    updateStats();
-                });
-                
-                // Make draggable
-                spaceSuit.addEventListener('mousedown', startDrag);
-                spaceSuit.addEventListener('touchstart', startDrag, { passive: false });
-                
-                // Replace the minifigure with space suit
-                minifigureElement.replaceWith(spaceSuit);
-                playerMinifigure = spaceSuit;
-            }
-            
+
             function returnToEarth() {
-                spaceBackground.style.opacity = 0;
-                rocket.style.bottom = '-110px';
+                spaceBackground.style.opacity = '0';
+                rocket.style.bottom = '-95px';
                 isInSpace = false;
-                
-                // Transform space suit back to minifigure if it exists
+
                 if (playerMinifigure && playerMinifigure.classList.contains('space-minifigure')) {
-                    transformToMinifigure(playerMinifigure);
+                    const x = playerMinifigure.style.left;
+                    const y = playerMinifigure.style.top;
+                    playerMinifigure.className = 'lego-item minifigure';
+                    playerMinifigure.style.left = x;
+                    playerMinifigure.style.top = y;
+                    playerMinifigure.innerHTML = `
+                        <div class="player-name">${playerName}</div>
+                        <div class="minifigure-head">
+                            <div class="minifigure-face">
+                                <div class="minifigure-eye"></div>
+                                <div class="minifigure-eye"></div>
+                                <div class="minifigure-mouth"></div>
+                            </div>
+                        </div>
+                        <div class="minifigure-body"></div>
+                        <div class="minifigure-arm left"></div>
+                        <div class="minifigure-arm right"></div>
+                        <div class="minifigure-legs"></div>
+                        <div class="minifigure-feet"></div>
+                        <div class="delete-btn">×</div>
+                    `;
+                    updatePreview();
                 }
-                
+
                 launchBtn.innerHTML = '<i class="fas fa-rocket"></i> Launch to Space!';
                 launchBtn.style.background = 'linear-gradient(135deg, #9c27b0, #e91e63)';
-                launchBtn.onclick = function() {
-                    launchBtn.addEventListener('click', arguments.callee);
-                };
+                launchBtn.onclick = launchToSpace;
             }
-            
-            function transformToMinifigure(spaceSuitElement) {
-                // Store original position
-                const x = spaceSuitElement.style.left;
-                const y = spaceSuitElement.style.top;
+
+            function launchToSpace() {
+                launchBtn.click();
+            }
+
+            // Create remote player element
+            function createRemotePlayer(playerId, name, position, customization) {
+                const item = document.createElement('div');
+                item.className = 'lego-item minifigure remote-player';
+                item.style.left = `${position.x}px`;
+                item.style.top = `${position.y}px`;
+                item.dataset.playerId = playerId;
                 
-                // Recreate minifigure with current customization
-                const headColor = document.querySelector(`.color-option[data-part="head"].selected`)?.dataset.color || 'skin';
-                const bodyColor = document.querySelector(`.color-option[data-part="body"].selected`)?.dataset.color || 'red';
-                const legsColor = document.querySelector(`.color-option[data-part="legs"].selected`)?.dataset.color || 'blue';
-                const hairColor = document.querySelector(`.color-option[data-part="hair"].selected`)?.dataset.color || 'brown';
-                const faceType = document.querySelector(`.color-option[data-part="face"].selected`)?.dataset.color || 'neutral';
+                const nameTag = document.createElement('div');
+                nameTag.className = 'player-name';
+                nameTag.textContent = name;
+                item.appendChild(nameTag);
                 
-                const minifigure = document.createElement('div');
-                minifigure.className = 'lego-item minifigure';
-                minifigure.style.left = x;
-                minifigure.style.top = y;
-                minifigure.style.zIndex = '10';
+                const head = document.createElement('div');
+                head.className = 'minifigure-head';
+                head.style.backgroundColor = getColorValue(customization.head);
                 
-                minifigure.innerHTML = `
-                    <div class="minifigure-head">
-                        <div class="minifigure-face">
-                            <div class="minifigure-eye"></div>
-                            <div class="minifigure-eye"></div>
-                            <div class="minifigure-mouth"></div>
-                        </div>
-                    </div>
-                    <div class="minifigure-body"></div>
-                    <div class="minifigure-arm left"></div>
-                    <div class="minifigure-arm right"></div>
-                    <div class="minifigure-legs"></div>
-                    <div class="minifigure-feet"></div>
-                    <div class="delete-btn">×</div>
-                `;
-                
-                const head = minifigure.querySelector('.minifigure-head');
-                const body = minifigure.querySelector('.minifigure-body');
-                const legs = minifigure.querySelector('.minifigure-legs');
                 const hair = document.createElement('div');
                 hair.className = 'minifigure-hair';
+                hair.style.backgroundColor = getColorValue(customization.hair);
                 head.appendChild(hair);
                 
-                head.style.backgroundColor = getColorValue(headColor);
-                body.style.backgroundColor = getColorValue(bodyColor);
-                legs.style.backgroundColor = getColorValue(legsColor);
-                hair.style.backgroundColor = getColorValue(hairColor);
-                
-                const face = minifigure.querySelector('.minifigure-face');
-                face.innerHTML = '';
+                const face = document.createElement('div');
+                face.className = 'minifigure-face';
                 const eye1 = document.createElement('div');
-                const eye2 = document.createElement('div');
-                const mouth = document.createElement('div');
-                
                 eye1.className = 'minifigure-eye';
+                const eye2 = document.createElement('div');
                 eye2.className = 'minifigure-eye';
+                const mouth = document.createElement('div');
                 mouth.className = 'minifigure-mouth';
                 
-                if (faceType === 'neutral') {
-                } else if (faceType === 'smile') {
-                    mouth.style.width = '14px';
-                    mouth.style.height = '2px';
+                if (customization.face === 'smile') {
+                    mouth.style.width = '10px';
+                    mouth.style.height = '1.5px';
                     mouth.style.borderRadius = '50%';
                     mouth.style.transform = 'rotate(10deg)';
-                } else if (faceType === 'angry') {
+                } else if (customization.face === 'angry') {
                     eye1.style.transform = 'rotate(15deg)';
                     eye2.style.transform = 'rotate(-15deg)';
-                    mouth.style.width = '14px';
+                    mouth.style.width = '10px';
                     mouth.style.height = '1px';
                     mouth.style.transform = 'rotate(-15deg)';
-                } else if (faceType === 'surprised') {
-                    eye1.style.width = '7px';
-                    eye1.style.height = '7px';
-                    eye2.style.width = '7px';
-                    eye2.style.height = '7px';
-                    mouth.style.width = '12px';
-                    mouth.style.height = '12px';
+                } else if (customization.face === 'surprised') {
+                    eye1.style.width = '5px';
+                    eye1.style.height = '5px';
+                    eye2.style.width = '5px';
+                    eye2.style.height = '5px';
+                    mouth.style.width = '8px';
+                    mouth.style.height = '8px';
                     mouth.style.borderRadius = '50%';
                     mouth.style.backgroundColor = 'transparent';
-                    mouth.style.border = '2px solid #000';
-                } else if (faceType === 'sleepy') {
-                    eye1.style.height = '2px';
-                    eye2.style.height = '2px';
+                    mouth.style.border = '1px solid #000';
+                } else if (customization.face === 'sleepy') {
+                    eye1.style.height = '1.5px';
+                    eye2.style.height = '1.5px';
                     eye1.style.borderRadius = '50%';
                     eye2.style.borderRadius = '50%';
                     eye1.style.transform = 'rotate(15deg)';
@@ -1817,33 +1822,58 @@
                 face.appendChild(eye1);
                 face.appendChild(eye2);
                 face.appendChild(mouth);
+                head.appendChild(face);
                 
-                // Add delete functionality
-                const deleteBtn = minifigure.querySelector('.delete-btn');
-                deleteBtn.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    minifigure.remove();
-                    playerMinifigure = null;
-                    updateStats();
-                });
+                const body = document.createElement('div');
+                body.className = 'minifigure-body';
+                body.style.backgroundColor = getColorValue(customization.body);
                 
-                // Make draggable
-                minifigure.addEventListener('mousedown', startDrag);
-                minifigure.addEventListener('touchstart', startDrag, { passive: false });
+                const armLeft = document.createElement('div');
+                armLeft.className = 'minifigure-arm left';
+                armLeft.style.backgroundColor = getColorValue(customization.body);
                 
-                // Replace the space suit with minifigure
-                spaceSuitElement.replaceWith(minifigure);
-                playerMinifigure = minifigure;
+                const armRight = document.createElement('div');
+                armRight.className = 'minifigure-arm right';
+                armRight.style.backgroundColor = getColorValue(customization.body);
+                
+                const legs = document.createElement('div');
+                legs.className = 'minifigure-legs';
+                legs.style.backgroundColor = getColorValue(customization.legs);
+                
+                const feet = document.createElement('div');
+                feet.className = 'minifigure-feet';
+                feet.style.backgroundColor = '#000';
+                
+                item.appendChild(head);
+                item.appendChild(body);
+                item.appendChild(armLeft);
+                item.appendChild(armRight);
+                item.appendChild(legs);
+                item.appendChild(feet);
+                
+                itemsContainer.appendChild(item);
+                remotePlayers[playerId] = { element: item, position, customization };
             }
             
-            // Initialize preview
+            // Update remote player position
+            function updateRemotePlayer(playerId, position, customization) {
+                if (remotePlayers[playerId]) {
+                    const player = remotePlayers[playerId];
+                    player.element.style.left = `${position.x}px`;
+                    player.element.style.top = `${position.y}px`;
+                    player.position = position;
+                    player.customization = customization;
+                }
+            }
+
             updatePreview();
             updateStats();
-            
-            // Add some initial elements for demonstration
+            updateConnectionStatus();
+
+            // Add initial demo items
             setTimeout(() => {
-                createLegoItem('car', 150, 350);
-                createLegoItem('house', 500, 320);
+                createLegoItem('car', 100, 300);
+                createLegoItem('house', 250, 280);
             }, 500);
         });
     </script>
