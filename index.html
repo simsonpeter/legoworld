@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lego World - Build & Explore</title>
     <link rel="manifest" href="manifest.json">
-    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 512 512%22><rect width=%22512%22 height=%22512%22 fill=%22%23FFCC00%22/><path d=%22M496 32H16C7.2 32 0 39.2 0 48v416c0 8.8 7.2 16 16 16h480c8.8 0 16-7.2 16-16V48c0-8.8-7.2-16-16-16zm-8 400H24V56h464v376zM360 160h-80v-80h80v80zm-16 16c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16zm-16 64h-80v-80h80v80zm-16 16c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16zm-16 64h-80v-80h80v80zm-16 16c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16zm-16 64h-80v-80h80v80zm-16 16c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16z%22 fill=%22%23E53935%22/></svg>">
-    <meta name="theme-color" content="#1a2a6c">
+    <link rel="icon" type="image/png" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2YwYzQ0MCIvPjxwYXRoIGQ9Ik01MCAxNSBMNTAgODUgTDEwIDYwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNNTAgMTUgTDUwIDg1IEw5MCA2MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDQwIEwxNSA1MCBMNDUgNDAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA0MCBMNTAgNTAgTDgwIDQwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgNDAgTDk1IDUwIEw4MCA0MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDUwIEwxNSA2MCBMNDUgNTAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA1MCBMNTAgNjAgTDgwIDUwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgNTAgTDk1IDYwIEw4MCA1MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDYwIEwxNSA3MCBMNDUgNjAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA2MCBMNTAgNzAgTDgwIDYwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgNjAgTDk1IDcwIEw4MCA2MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDcwIEwxNSA4MCBMNDUgNzAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA3MCBMNTAgODAgTDgwIDcwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgNzAgTDk1IDgwIEw4MCA3MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDgwIEwxNSA5MCBMNDUgODAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA4MCBMNTAgOTAgTDgwIDgwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgODAgTDk1IDkwIEw4MCA4MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDkwIEwxNSAxMDAgTDQ1IDkwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNNTAgOTAgTDUwIDEwMCBMODAgOTAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik05NSA5MCBMOTUgMTAwIEw4MCA5MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHRleHQgeD0iNTAiIHk9IjUwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMDAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCI+TEVHTzwvdGV4dD48dGV4dCB4PSI1MCIgeT0iNzAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMwMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIj5BcHA8L3RleHQ+PC9zdmc+">
+    <meta name="theme-color" content="#ffcc00">
     <meta name="description" content="Build your Lego world with cars, houses, and minifigures. Travel to space and transform your character!">
     <style>
         * {
@@ -1762,7 +1762,7 @@
                 `;
                 
                 const head = minifigure.querySelector('.minifigure-head');
-                const body = miniffigure.querySelector('.minifigure-body');
+                const body = minifigure.querySelector('.minifigure-body');
                 const legs = minifigure.querySelector('.minifigure-legs');
                 const hair = document.createElement('div');
                 hair.className = 'minifigure-hair';
