@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,15 +5,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Lego World - Multiplayer</title>
     <link rel="manifest" href="manifest.json">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2YwYzQ0MCIvPjxwYXRoIGQ9Ik01MCAxNSBMNTAgODUgTDEwIDYwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNNTAgMTUgTDUwIDg1IEw5MCA2MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDQwIEwxNSA1MCBMNDUgNDAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA0MCBMNTAgNTAgTDgwIDQwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgNDAgTDk1IDUwIEw4MCA0MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDUwIEwxNSA2MCBMNDUgNTAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA1MCBMNTAgNjAgTDgwIDUwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgNTAgTDk1IDYwIEw4MCA1MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDYwIEwxNSA3MCBMNDUgNjAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA2MCBMNTAgNzAgTDgwIDYwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgNjAgTDk1IDcwIEw4MCA2MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDcwIEwxNSA4MCBMNDUgNzAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA3MCBMNTAgODAgTDgwIDcwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgNzAgTDk1IDgwIEw4MCA3MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDgwIEwxNSA5MCBMNDUgODAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA4MCBMNTAgOTAgTDgwIDgwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgODAgTDk1IDkwIEw4MCA4MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDkwIEwxNSAxMDAgTDQ1IDkwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNNTAgOTAgTDUwIDEwMCBMODAgOTAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik05NSA5MCBMOTUgMTAwIEw4MCA5MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHRleHQgeD0iNTAiIHk9IjUwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMDAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCI+TEVHTzwvdGV4dD48dGV4dCB4PSI1MCIgeT0iNzAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMwMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIj5BcHA8L3RleHQ+PC9zdmc+">
+    <link rel="icon" type="image/svg+xml" href="image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2YwYzQ0MCIvPjxwYXRoIGQ9Ik01MCAxNSBMNTAgODUgTDEwIDYwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNNTAgMTUgTDUwIDg1IEw5MCA2MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDQwIEwxNSA1MCBMNDUgNDAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA0MCBMNTAgNTAgTDgwIDQwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgNDAgTDk1IDUwIEw4MCA0MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDUwIEwxNSA2MCBMNDUgNTAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA1MCBMNTAgNjAgTDgwIDUwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgNTAgTDk1IDYwIEw4MCA1MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDYwIEwxNSA3MCBMNDUgNjAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA2MCBMNTAgNzAgTDgwIDYwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgNjAgTDk1IDcwIEw4MCA2MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDcwIEwxNSA4MCBMNDUgNzAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA3MCBMNTAgODAgTDgwIDcwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgNzAgTDk1IDgwIEw4MCA3MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDgwIEwxNSA5MCBMNDUgODAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA4MCBMNTAgOTAgTDgwIDgwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgODAgTDk1IDkwIEw4MCA4MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDkwIEwxNSAxMDAgTDQ1IDkwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNNTAgOTAgTDUwIDEwMCBMODAgOTAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik05NSA5MCBMOTUgMTAwIEw4MCA5MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHRleHQgeD0iNTAiIHk9IjUwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMDAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCI+TEVHTzwvdGV4dD48dGV4dCB4PSI1MCIgeT0iNzAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMwMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIj5BcHA8L3RleHQ+PC9zdmc+">
     <meta name="theme-color" content="#ffcc00">
     <meta name="description" content="Build your Lego world with friends! Multiplayer Lego building game for local networks.">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Lego World">
-    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2YwYzQ0MCIvPjxwYXRoIGQ9Ik01MCAxNSBMNTAgODUgTDEwIDYwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNNTAgMTUgTDUwIDg1IEw5MCA2MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDQwIEwxNSA1MCBMNDUgNDAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA0MCBMNTAgNTAgTDgwIDQwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgNDAgTDk1IDUwIEw4MCA0MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDUwIEwxNSA2MCBMNDUgNTAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA1MCBMNTAgNjAgTDgwIDUwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgNTAgTDk1IDYwIEw4MCA1MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDYwIEwxNSA3MCBMNDUgNjAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA2MCBMNTAgNzAgTDgwIDYwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgNjAgTDk1IDcwIEw4MCA2MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDcwIEwxNSA4MCBMNDUgNzAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA3MCBMNTAgODAgTDgwIDcwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgNzAgTDk1IDgwIEw4MCA3MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDgwIEwxNSA5MCBMNDUgODAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA4MCBMNTAgOTAgTDgwIDgwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgODAgTDk1IDkwIEw4MCA4MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDkwIEwxNSAxMDAgTDQ1IDkwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNNTAgOTAgTDUwIDEwMCBMODAgOTAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik05NSA5MCBMOTUgMTAwIEw4MCA5MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHRleHQgeD0iNTAiIHk9IjUwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMDAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCI+TEVHTzwvdGV4dD48dGV4dCB4PSI1MCIgeT0iNzAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMwMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIj5BcHA8L3RleHQ+PC9zdmc+">
+    <link rel="apple-touch-icon" href="image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2YwYzQ0MCIvPjxwYXRoIGQ9Ik01MCAxNSBMNTAgODUgTDEwIDYwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNNTAgMTUgTDUwIDg1IEw5MCA2MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDQwIEwxNSA1MCBMNDUgNDAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA0MCBMNTAgNTAgTDgwIDQwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgNDAgTDk1IDUwIEw4MCA0MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDUwIEwxNSA2MCBMNDUgNTAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA1MCBMNTAgNjAgTDgwIDUwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgNTAgTDk1IDYwIEw4MCA1MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDYwIEwxNSA3MCBMNDUgNjAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA2MCBMNTAgNzAgTDgwIDYwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgNjAgTDk1IDcwIEw4MCA2MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDcwIEwxNSA4MCBMNDUgNzAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA3MCBMNTAgODAgTDgwIDcwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgNzAgTDk1IDgwIEw4MCA3MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDgwIEwxNSA5MCBMNDUgODAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA4MCBMNTAgOTAgTDgwIDgwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgODAgTDk1IDkwIEw4MCA4MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDkwIEwxNSAxMDAgTDQ1IDkwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNNTAgOTAgTDUwIDEwMCBMODAgOTAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik05NSA5MCBMOTUgMTAwIEw4MCA5MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHRleHQgeD0iNTAiIHk9IjUwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMDAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCI+TEVHTzwvdGV4dD48dGV4dCB4PSI1MCIgeT0iNzAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMwMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIj5BcHA8L3RleHQ+PC9zdmc+">
 
     <style>
+        /* Splash Screen */
+        .splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            color: white;
+            overflow: hidden;
+        }
+
+        .splash-logo {
+            width: 180px;
+            height: 180px;
+            margin-bottom: 20px;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2YwYzQ0MCIvPjxwYXRoIGQ9Ik01MCAxNSBMNTAgODUgTDEwIDYwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNNTAgMTUgTDUwIDg1IEw5MCA2MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDQwIEwxNSA1MCBMNDUgNDAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA0MCBMNTAgNTAgTDgwIDQwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgNDAgTDk1IDUwIEw4MCA0MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDUwIEwxNSA2MCBMNDUgNTAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA1MCBMNTAgNjAgTDgwIDUwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgNTAgTDk1IDYwIEw4MCA1MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDYwIEwxNSA3MCBMNDUgNjAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA2MCBMNTAgNzAgTDgwIDYwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgNjAgTDk1IDcwIEw4MCA2MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDcwIEwxNSA4MCBMNDUgNzAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA3MCBMNTAgODAgTDgwIDcwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgNzAgTDk1IDgwIEw4MCA3MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDgwIEwxNSA5MCBMNDUgODAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik01MCA4MCBMNTAgOTAgTDgwIDgwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNOTUgODAgTDk1IDkwIEw4MCA4MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHBhdGggZD0iTTE1IDkwIEwxNSAxMDAgTDQ1IDkwIFoiIGZpbGw9IiNmMDc0NDMiLz48cGF0aCBkPSJNNTAgOTAgTDUwIDEwMCBMODAgOTAgWiIgZmlsbD0iI2YwNzQ0MyIvPjxwYXRoIGQ9Ik05NSA5MCBMOTUgMTAwIEw4MCA5MCBaIiBmaWxsPSIjZjA3NDQzIi8+PHRleHQgeD0iNTAiIHk9IjUwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMDAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCI+TEVHTzwvdGV4dD48dGV4dCB4PSI1MCIgeT0iNzAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMwMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIj5BcHA8L3RleHQ+PC9zdmc+') no-repeat center center;
+            background-size: contain;
+            animation: logoPulse 2s infinite;
+            filter: drop-shadow(0 0 20px rgba(255, 204, 0, 0.8));
+        }
+
+        .splash-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 0 0 15px rgba(255, 204, 0, 0.7);
+            color: #ffcc00;
+            background: linear-gradient(45deg, #ffcc00, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textGlow 2s infinite alternate;
+        }
+
+        .splash-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-bottom: 20px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .made-by {
+            position: absolute;
+            bottom: 40px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #ffcc00;
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        .loading-indicator {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            border-top-color: #ffcc00;
+            animation: spin 1s linear infinite;
+            margin-top: 20px;
+        }
+
+        @keyframes logoPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes textGlow {
+            from { text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00; }
+            to { text-shadow: 0 0 20px #ffcc00, 0 0 40px #ffcc00, 0 0 60px #ffcc00; }
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Main app styles (same as before) */
         * {
             margin: 0;
             padding: 0;
@@ -29,9 +120,118 @@
             color: white;
             position: relative;
             touch-action: manipulation;
+            display: flex;
+            flex-direction: row;
+            opacity: 0;
+            transition: opacity 0.5s ease;
         }
 
-        /* Multiplayer Connection Banner */
+        body.loaded {
+            opacity: 1;
+        }
+
+        /* Chatbox Container */
+        .chat-container {
+            width: 280px;
+            background: rgba(0, 0, 0, 0.7);
+            border-right: 2px solid #4a90e2;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            z-index: 100;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            padding: 16px;
+            text-align: center;
+            border-bottom: 2px solid #ffcc00;
+            background: rgba(0, 0, 0, 0.8);
+            font-size: 1.3rem;
+            color: #ffcc00;
+            font-weight: bold;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 16px;
+            overflow-y: auto;
+            max-height: calc(100vh - 200px);
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            margin: 0 16px 16px 16px;
+        }
+
+        .chat-message {
+            margin-bottom: 12px;
+            padding: 10px 14px;
+            border-radius: 18px;
+            max-width: 80%;
+            word-wrap: break-word;
+            line-height: 1.4;
+            font-size: 0.9rem;
+        }
+
+        .chat-message.you {
+            background: linear-gradient(135deg, #43a047, #66bb6a);
+            color: white;
+            margin-left: auto;
+            border-bottom-right-radius: 4px;
+        }
+
+        .chat-message.other {
+            background: rgba(255, 204, 0, 0.2);
+            color: white;
+            margin-right: auto;
+            border-bottom-left-radius: 4px;
+        }
+
+        .chat-message .sender {
+            font-weight: bold;
+            font-size: 0.8rem;
+            margin-bottom: 4px;
+            opacity: 0.9;
+        }
+
+        .chat-input-container {
+            display: flex;
+            padding: 16px;
+            background: rgba(0, 0, 0, 0.8);
+            border-top: 2px solid #4a90e2;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 0.9rem;
+            outline: none;
+            margin-right: 10px;
+        }
+
+        .chat-send-btn {
+            background: #ffcc00;
+            color: #000;
+            border: none;
+            border-radius: 20px;
+            padding: 12px 20px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .chat-send-btn:hover {
+            background: #ffd700;
+            transform: translateY(-2px);
+        }
+
+        /* Connection Banner */
         .connection-banner {
             position: fixed;
             top: 0;
@@ -153,7 +353,7 @@
         }
 
         /* Header */
-        header {
+        .game-header {
             text-align: center;
             padding: 16px 12px;
             margin-bottom: 16px;
@@ -197,6 +397,9 @@
             flex-direction: column;
             gap: 16px;
             margin-bottom: 20px;
+            flex: 1;
+            padding: 20px;
+            overflow: hidden;
         }
 
         .world-view {
@@ -913,6 +1116,17 @@
             .minifigure-preview { height: 80px; }
             .customization-panel { max-height: 280px; }
             .install-banner { font-size: 13px; }
+            .chat-container {
+                width: 240px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100vh;
+                z-index: 101;
+            }
+            .chat-messages {
+                max-height: calc(100vh - 280px);
+            }
         }
 
         /* iOS Safari */
@@ -923,8 +1137,29 @@
     </style>
 </head>
 <body>
+    <!-- Splash Screen -->
+    <div class="splash-screen" id="splashScreen">
+        <div class="splash-logo"></div>
+        <h1 class="splash-title">Lego World</h1>
+        <p class="splash-subtitle">Build, Play, Explore</p>
+        <div class="loading-indicator"></div>
+        <div class="made-by">Made by Levi Group</div>
+    </div>
+
+    <!-- Chat Container -->
+    <div class="chat-container" style="display: none;">
+        <div class="chat-header">💬 Chat</div>
+        <div class="chat-messages" id="chatMessages">
+            <!-- Messages will appear here -->
+        </div>
+        <div class="chat-input-container">
+            <input type="text" class="chat-input" id="chatInput" placeholder="Type a message..." maxlength="100">
+            <button class="chat-send-btn" id="chatSendBtn">Send</button>
+        </div>
+    </div>
+
     <!-- Connection Banner -->
-    <div class="connection-banner" id="connectionBanner">
+    <div class="connection-banner" id="connectionBanner" style="display: none;">
         <div class="connection-status">
             <div class="status-dot" id="connectionStatus"></div>
             <span id="connectionText">Not connected</span>
@@ -937,157 +1172,156 @@
 
     <div class="particles" id="particles"></div>
 
-    <div class="container">
-        <header>
+    <div class="game-area" style="display: none;">
+        <header class="game-header">
             <h1>Lego World - Multiplayer</h1>
             <p class="subtitle">Build your world with friends! Play together on the same Wi-Fi network.</p>
         </header>
 
-        <div class="game-area">
-            <div class="world-view">
-                <div class="world-map"></div>
-                <div class="items-container" id="itemsContainer"></div>
-                <div class="lego-item rocket" id="rocket" style="left: 50%; transform: translateX(-50%);"></div>
-                <div class="space-background" id="spaceBackground"></div>
-            </div>
-
-            <div class="controls">
-                <h2 class="section-title">Build</h2>
-                <div class="build-options">
-                    <button class="build-btn active" data-type="car">
-                        <i class="fas fa-car"></i>Car
-                    </button>
-                    <button class="build-btn" data-type="helicopter">
-                        <i class="fas fa-helicopter"></i>Helicopter
-                    </button>
-                    <button class="build-btn" data-type="house">
-                        <i class="fas fa-home"></i>House
-                    </button>
-                    <button class="build-btn" data-type="minifigure">
-                        <i class="fas fa-user"></i>Minifigure
-                    </button>
-                </div>
-
-                <h2 class="section-title">Stats</h2>
-                <div class="stats">
-                    <div class="stat-box">
-                        <div class="stat-value" id="bricksCount">0</div>
-                        <div class="stat-label">Built</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-value" id="vehiclesCount">0</div>
-                        <div class="stat-label">Vehicles</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-value" id="structuresCount">0</div>
-                        <div class="stat-label">Structures</div>
-                    </div>
-                </div>
-
-                <div class="customization-panel">
-                    <h2 class="section-title">Customize</h2>
-
-                    <div class="customization-section">
-                        <h3>Head</h3>
-                        <div class="color-options">
-                            <div class="color-option selected" style="background-color: #f5d6b5;" data-color="skin" data-part="head"></div>
-                            <div class="color-option" style="background-color: #8b4513;" data-color="brown" data-part="head"></div>
-                            <div class="color-option" style="background-color: #ffcc00;" data-color="yellow" data-part="head"></div>
-                            <div class="color-option" style="background-color: #ff6b6b;" data-color="red" data-part="head"></div>
-                            <div class="color-option" style="background-color: #4ecdc4;" data-color="blue" data-part="head"></div>
-                            <div class="color-option" style="background-color: #ffd166;" data-color="tan" data-part="head"></div>
-                        </div>
-                    </div>
-
-                    <div class="customization-section">
-                        <h3>Body</h3>
-                        <div class="color-options">
-                            <div class="color-option" style="background-color: #e53935;" data-color="red" data-part="body"></div>
-                            <div class="color-option selected" style="background-color: #2196f3;" data-color="blue" data-part="body"></div>
-                            <div class="color-option" style="background-color: #4caf50;" data-color="green" data-part="body"></div>
-                            <div class="color-option" style="background-color: #ff9800;" data-color="orange" data-part="body"></div>
-                            <div class="color-option" style="background-color: #673ab7;" data-color="purple" data-part="body"></div>
-                            <div class="color-option" style="background-color: #000;" data-color="black" data-part="body"></div>
-                        </div>
-                    </div>
-
-                    <div class="customization-section">
-                        <h3>Legs</h3>
-                        <div class="color-options">
-                            <div class="color-option selected" style="background-color: #2196f3;" data-color="blue" data-part="legs"></div>
-                            <div class="color-option" style="background-color: #e53935;" data-color="red" data-part="legs"></div>
-                            <div class="color-option" style="background-color: #000;" data-color="black" data-part="legs"></div>
-                            <div class="color-option" style="background-color: #795548;" data-color="brown" data-part="legs"></div>
-                            <div class="color-option" style="background-color: #4caf50;" data-color="green" data-part="legs"></div>
-                            <div class="color-option" style="background-color: #9c27b0;" data-color="purple" data-part="legs"></div>
-                        </div>
-                    </div>
-
-                    <div class="customization-section">
-                        <h3>Hair</h3>
-                        <div class="color-options">
-                            <div class="color-option selected" style="background-color: #8b4513;" data-color="brown" data-part="hair"></div>
-                            <div class="color-option" style="background-color: #ffcc00;" data-color="yellow" data-part="hair"></div>
-                            <div class="color-option" style="background-color: #000;" data-color="black" data-part="hair"></div>
-                            <div class="color-option" style="background-color: #ffffff;" data-color="white" data-part="hair"></div>
-                            <div class="color-option" style="background-color: #ff6b6b;" data-color="red" data-part="hair"></div>
-                            <div class="color-option" style="background-color: #795548;" data-color="tan" data-part="hair"></div>
-                        </div>
-                    </div>
-
-                    <div class="customization-section">
-                        <h3>Face</h3>
-                        <div class="color-options">
-                            <div class="color-option selected" style="background-color: #000;" data-color="neutral" data-part="face"></div>
-                            <div class="color-option" style="background-color: #ffcc00;" data-color="smile" data-part="face"></div>
-                            <div class="color-option" style="background-color: #ff6b6b;" data-color="angry" data-part="face"></div>
-                            <div class="color-option" style="background-color: #4ecdc4;" data-color="surprised" data-part="face"></div>
-                            <div class="color-option" style="background-color: #9c27b0;" data-color="sleepy" data-part="face"></div>
-                        </div>
-                    </div>
-
-                    <div class="preset-btn" id="randomMinifigure">
-                        <i class="fas fa-random"></i> Random Minifigure
-                    </div>
-
-                    <div class="minifigure-preview">
-                        <div class="minifigure" id="previewMinifigure">
-                            <div class="minifigure-head">
-                                <div class="minifigure-face">
-                                    <div class="minifigure-eye"></div>
-                                    <div class="minifigure-eye"></div>
-                                    <div class="minifigure-mouth"></div>
-                                </div>
-                            </div>
-                            <div class="minifigure-body"></div>
-                            <div class="minifigure-arm left"></div>
-                            <div class="minifigure-arm right"></div>
-                            <div class="minifigure-legs"></div>
-                            <div class="minifigure-feet"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <button class="space-btn" id="launchBtn">
-                    <i class="fas fa-rocket"></i> Launch to Space!
-                </button>
-            </div>
+        <div class="world-view">
+            <div class="world-map"></div>
+            <div class="items-container" id="itemsContainer"></div>
+            <div class="lego-item rocket" id="rocket" style="left: 50%; transform: translateX(-50%);"></div>
+            <div class="space-background" id="spaceBackground"></div>
         </div>
 
-        <div class="instructions">
-            <h2>How to Play Multiplayer</h2>
-            <ul>
-                <li>One player taps "Host Game" to create a room</li>
-                <li>Other players tap "Join Game" and enter the room code</li>
-                <li>See other players' minifigures in real-time!</li>
-                <li>Build together and launch to space as a team!</li>
-            </ul>
-            <p>Tip: All players must be on the same Wi-Fi network.</p>
+        <div class="controls">
+            <h2 class="section-title">Build</h2>
+            <div class="build-options">
+                <button class="build-btn active" data-type="car">
+                    <i class="fas fa-car"></i>Car
+                </button>
+                <button class="build-btn" data-type="helicopter">
+                    <i class="fas fa-helicopter"></i>Helicopter
+                </button>
+                <button class="build-btn" data-type="house">
+                    <i class="fas fa-home"></i>House
+                </button>
+                <button class="build-btn" data-type="minifigure">
+                    <i class="fas fa-user"></i>Minifigure
+                </button>
+            </div>
+
+            <h2 class="section-title">Stats</h2>
+            <div class="stats">
+                <div class="stat-box">
+                    <div class="stat-value" id="bricksCount">0</div>
+                    <div class="stat-label">Built</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value" id="vehiclesCount">0</div>
+                    <div class="stat-label">Vehicles</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value" id="structuresCount">0</div>
+                    <div class="stat-label">Structures</div>
+                </div>
+            </div>
+
+            <div class="customization-panel">
+                <h2 class="section-title">Customize</h2>
+
+                <div class="customization-section">
+                    <h3>Head</h3>
+                    <div class="color-options">
+                        <div class="color-option selected" style="background-color: #f5d6b5;" data-color="skin" data-part="head"></div>
+                        <div class="color-option" style="background-color: #8b4513;" data-color="brown" data-part="head"></div>
+                        <div class="color-option" style="background-color: #ffcc00;" data-color="yellow" data-part="head"></div>
+                        <div class="color-option" style="background-color: #ff6b6b;" data-color="red" data-part="head"></div>
+                        <div class="color-option" style="background-color: #4ecdc4;" data-color="blue" data-part="head"></div>
+                        <div class="color-option" style="background-color: #ffd166;" data-color="tan" data-part="head"></div>
+                    </div>
+                </div>
+
+                <div class="customization-section">
+                    <h3>Body</h3>
+                    <div class="color-options">
+                        <div class="color-option" style="background-color: #e53935;" data-color="red" data-part="body"></div>
+                        <div class="color-option selected" style="background-color: #2196f3;" data-color="blue" data-part="body"></div>
+                        <div class="color-option" style="background-color: #4caf50;" data-color="green" data-part="body"></div>
+                        <div class="color-option" style="background-color: #ff9800;" data-color="orange" data-part="body"></div>
+                        <div class="color-option" style="background-color: #673ab7;" data-color="purple" data-part="body"></div>
+                        <div class="color-option" style="background-color: #000;" data-color="black" data-part="body"></div>
+                    </div>
+                </div>
+
+                <div class="customization-section">
+                    <h3>Legs</h3>
+                    <div class="color-options">
+                        <div class="color-option selected" style="background-color: #2196f3;" data-color="blue" data-part="legs"></div>
+                        <div class="color-option" style="background-color: #e53935;" data-color="red" data-part="legs"></div>
+                        <div class="color-option" style="background-color: #000;" data-color="black" data-part="legs"></div>
+                        <div class="color-option" style="background-color: #795548;" data-color="brown" data-part="legs"></div>
+                        <div class="color-option" style="background-color: #4caf50;" data-color="green" data-part="legs"></div>
+                        <div class="color-option" style="background-color: #9c27b0;" data-color="purple" data-part="legs"></div>
+                    </div>
+                </div>
+
+                <div class="customization-section">
+                    <h3>Hair</h3>
+                    <div class="color-options">
+                        <div class="color-option selected" style="background-color: #8b4513;" data-color="brown" data-part="hair"></div>
+                        <div class="color-option" style="background-color: #ffcc00;" data-color="yellow" data-part="hair"></div>
+                        <div class="color-option" style="background-color: #000;" data-color="black" data-part="hair"></div>
+                        <div class="color-option" style="background-color: #ffffff;" data-color="white" data-part="hair"></div>
+                        <div class="color-option" style="background-color: #ff6b6b;" data-color="red" data-part="hair"></div>
+                        <div class="color-option" style="background-color: #795548;" data-color="tan" data-part="hair"></div>
+                    </div>
+                </div>
+
+                <div class="customization-section">
+                    <h3>Face</h3>
+                    <div class="color-options">
+                        <div class="color-option selected" style="background-color: #000;" data-color="neutral" data-part="face"></div>
+                        <div class="color-option" style="background-color: #ffcc00;" data-color="smile" data-part="face"></div>
+                        <div class="color-option" style="background-color: #ff6b6b;" data-color="angry" data-part="face"></div>
+                        <div class="color-option" style="background-color: #4ecdc4;" data-color="surprised" data-part="face"></div>
+                        <div class="color-option" style="background-color: #9c27b0;" data-color="sleepy" data-part="face"></div>
+                    </div>
+                </div>
+
+                <div class="preset-btn" id="randomMinifigure">
+                    <i class="fas fa-random"></i> Random Minifigure
+                </div>
+
+                <div class="minifigure-preview">
+                    <div class="minifigure" id="previewMinifigure">
+                        <div class="minifigure-head">
+                            <div class="minifigure-face">
+                                <div class="minifigure-eye"></div>
+                                <div class="minifigure-eye"></div>
+                                <div class="minifigure-mouth"></div>
+                            </div>
+                        </div>
+                        <div class="minifigure-body"></div>
+                        <div class="minifigure-arm left"></div>
+                        <div class="minifigure-arm right"></div>
+                        <div class="minifigure-legs"></div>
+                        <div class="minifigure-feet"></div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="space-btn" id="launchBtn">
+                <i class="fas fa-rocket"></i> Launch to Space!
+            </button>
         </div>
     </div>
 
+    <div class="instructions" style="display: none;">
+        <h2>How to Play Multiplayer</h2>
+        <ul>
+            <li>One player taps "Host Game" to create a room</li>
+            <li>Other players tap "Join Game" and enter the room code</li>
+            <li>See other players' minifigures in real-time!</li>
+            <li>Use the chat on the left to communicate with friends</li>
+            <li>Build together and launch to space as a team!</li>
+        </ul>
+        <p>Tip: All players must be on the same Wi-Fi network.</p>
+    </div>
+
     <!-- Install Banner -->
-    <div class="install-banner" id="installBanner">
+    <div class="install-banner" id="installBanner" style="display: none;">
         <div class="install-text">
             <strong>Add to Home Screen</strong><br>
             Tap the share button → “Add to Home Screen”
@@ -1099,198 +1333,289 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
     <script>
-        // PWA Installation Logic
-        let deferredPrompt;
-        
-        window.addEventListener('beforeinstallprompt', (e) => {
-            e.preventDefault();
-            deferredPrompt = e;
-            const installBanner = document.getElementById('installBanner');
-            installBanner.classList.add('show');
-        });
-
-        document.getElementById('installBtn').addEventListener('click', async () => {
-            const installBanner = document.getElementById('installBanner');
-            installBanner.classList.remove('show');
-            
-            if (deferredPrompt) {
-                deferredPrompt.prompt();
-                const { outcome } = await deferredPrompt.userChoice;
-                if (outcome === 'accepted') {
-                    console.log('User accepted install');
-                }
-                deferredPrompt = null;
-            }
-        });
-
-        // Service Worker Registration
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('sw.js').catch(console.error);
-            });
-        }
-
-        // Create particles
-        const particlesContainer = document.getElementById('particles');
-        for (let i = 0; i < 30; i++) {
-            const particle = document.createElement('div');
-            particle.classList.add('particle');
-            particle.style.left = `${Math.random() * 100}%`;
-            particle.style.top = `${Math.random() * 100}%`;
-            particle.style.animationDelay = `${Math.random() * 15}s`;
-            particle.style.opacity = Math.random() * 0.6 + 0.2;
-            particlesContainer.appendChild(particle);
-        }
-
-        // Multiplayer Connection State
-        let isHost = false;
-        let isJoined = false;
-        let peerConnection = null;
-        let dataChannel = null;
-        let roomCode = null;
-        let localPlayerId = 'player-' + Math.random().toString(36).substr(2, 9);
-        let playerName = prompt("Enter your name:", "Player") || "Player";
-        const remotePlayers = {};
-        const connectionStatus = document.getElementById('connectionStatus');
-        const connectionText = document.getElementById('connectionText');
-
-        // Create a simple signaling server using WebRTC data channels
-        // In a real app, you'd use a proper signaling server, but for local network we can use a simple approach
-        function createPeerConnection(isInitiator) {
-            const config = {
-                iceServers: [
-                    { urls: 'stun:stun.l.google.com:19302' },
-                    { urls: 'stun:stun1.l.google.com:19302' }
-                ]
-            };
-            
-            peerConnection = new RTCPeerConnection(config);
-            
-            // Create data channel for sending player positions
-            if (isInitiator) {
-                dataChannel = peerConnection.createDataChannel('lego-data');
-                setupDataChannel(dataChannel);
-            }
-            
-            peerConnection.ondatachannel = event => {
-                dataChannel = event.channel;
-                setupDataChannel(dataChannel);
-            };
-            
-            peerConnection.onicecandidate = event => {
-                if (event.candidate) {
-                    // In a real app, you'd send this to the other peer via signaling server
-                    console.log('ICE candidate:', event.candidate);
-                }
-            };
-            
-            return peerConnection;
-        }
-        
-        function setupDataChannel(channel) {
-            channel.onopen = () => {
-                console.log('Data channel opened');
-                connectionStatus.classList.add('connected');
-                connectionText.textContent = isHost ? 'Hosting game...' : 'Connected!';
-                updateConnectionStatus();
-            };
-            
-            channel.onmessage = event => {
-                const data = JSON.parse(event.data);
-                handleNetworkMessage(data);
-            };
-            
-            channel.onerror = error => {
-                console.error('Data channel error:', error);
-            };
-        }
-        
-        function handleNetworkMessage(data) {
-            if (data.type === 'player-update') {
-                if (data.playerId !== localPlayerId) {
-                    updateRemotePlayer(data.playerId, data.position, data.customization);
-                }
-            } else if (data.type === 'player-joined') {
-                if (data.playerId !== localPlayerId) {
-                    // Create remote player
-                    createRemotePlayer(data.playerId, data.name, data.position, data.customization);
-                }
-            } else if (data.type === 'player-left') {
-                if (remotePlayers[data.playerId]) {
-                    remotePlayers[data.playerId].element.remove();
-                    delete remotePlayers[data.playerId];
-                }
-            }
-        }
-        
-        function updateConnectionStatus() {
-            if (isHost || isJoined) {
-                connectionStatus.classList.add('connected');
-                connectionText.textContent = isHost ? 'Hosting game...' : 'Connected!';
-            } else {
-                connectionStatus.classList.remove('connected');
-                connectionText.textContent = 'Not connected';
-            }
-        }
-        
-        // Host Game Button
-        document.getElementById('hostBtn').addEventListener('click', () => {
-            if (isHost || isJoined) return;
-            
-            isHost = true;
-            roomCode = Math.random().toString(36).substr(2, 6).toUpperCase();
-            alert(`Room Code: ${roomCode}\nShare this code with friends to join!`);
-            
-            createPeerConnection(true);
-            updateConnectionStatus();
-        });
-        
-        // Join Game Button
-        document.getElementById('joinBtn').addEventListener('click', () => {
-            if (isHost || isJoined) return;
-            
-            const code = prompt("Enter room code:");
-            if (!code) return;
-            
-            roomCode = code.toUpperCase();
-            isJoined = true;
-            
-            createPeerConnection(false);
-            updateConnectionStatus();
-            
-            // In a real app, you'd signal to the host that you want to join
-            // For this demo, we'll simulate the connection
+        // Initialize splash screen and load main app
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hide splash screen after 2 seconds
             setTimeout(() => {
-                if (dataChannel) {
-                    // Send join message
-                    const joinMessage = {
-                        type: 'player-joined',
+                const splashScreen = document.getElementById('splashScreen');
+                if (splashScreen) {
+                    splashScreen.style.opacity = '0';
+                    setTimeout(() => {
+                        splashScreen.style.display = 'none';
+                        showMainApp();
+                    }, 500);
+                }
+            }, 2000);
+        });
+
+        function showMainApp() {
+            // Show all main app elements
+            document.querySelectorAll('.chat-container, .connection-banner, .game-area, .instructions, .install-banner').forEach(el => {
+                el.style.display = 'block';
+            });
+            
+            // Add loaded class to body
+            document.body.classList.add('loaded');
+            
+            // Initialize the rest of the app
+            initApp();
+        }
+
+        function initApp() {
+            // PWA Installation Logic
+            let deferredPrompt;
+            
+            window.addEventListener('beforeinstallprompt', (e) => {
+                e.preventDefault();
+                deferredPrompt = e;
+                const installBanner = document.getElementById('installBanner');
+                installBanner.classList.add('show');
+            });
+
+            document.getElementById('installBtn').addEventListener('click', async () => {
+                const installBanner = document.getElementById('installBanner');
+                installBanner.classList.remove('show');
+                
+                if (deferredPrompt) {
+                    deferredPrompt.prompt();
+                    const { outcome } = await deferredPrompt.userChoice;
+                    if (outcome === 'accepted') {
+                        console.log('User accepted install');
+                    }
+                    deferredPrompt = null;
+                }
+            });
+
+            // Service Worker Registration
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('sw.js').catch(console.error);
+                });
+            }
+
+            // Create particles
+            const particlesContainer = document.getElementById('particles');
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 15}s`;
+                particle.style.opacity = Math.random() * 0.6 + 0.2;
+                particlesContainer.appendChild(particle);
+            }
+
+            // Multiplayer Connection State
+            let isHost = false;
+            let isJoined = false;
+            let peerConnection = null;
+            let dataChannel = null;
+            let roomCode = null;
+            let localPlayerId = 'player-' + Math.random().toString(36).substr(2, 9);
+            let playerName = prompt("Enter your name:", "Player") || "Player";
+            const remotePlayers = {};
+            const connectionStatus = document.getElementById('connectionStatus');
+            const connectionText = document.getElementById('connectionText');
+            const chatMessages = document.getElementById('chatMessages');
+            const chatInput = document.getElementById('chatInput');
+            const chatSendBtn = document.getElementById('chatSendBtn');
+
+            // Chat functionality
+            function sendMessage(message) {
+                if (!message.trim()) return;
+                
+                // Add local message to chat
+                addChatMessage(message, 'you');
+                
+                // Send message to other players
+                if (dataChannel && (isHost || isJoined)) {
+                    const chatMessage = {
+                        type: 'chat-message',
                         playerId: localPlayerId,
                         name: playerName,
-                        position: { x: 200, y: 300 },
-                        customization: getCurrentCustomization()
+                        message: message,
+                        timestamp: new Date().toLocaleTimeString()
                     };
-                    dataChannel.send(JSON.stringify(joinMessage));
+                    dataChannel.send(JSON.stringify(chatMessage));
                 }
-            }, 1000);
-        });
-        
-        function getCurrentCustomization() {
-            return {
-                head: getSelectedColor('head') || 'skin',
-                body: getSelectedColor('body') || 'red',
-                legs: getSelectedColor('legs') || 'blue',
-                hair: getSelectedColor('hair') || 'brown',
-                face: getSelectedColor('face') || 'neutral'
-            };
-        }
-        
-        function getSelectedColor(part) {
-            return document.querySelector(`.color-option[data-part="${part}"].selected`)?.dataset.color || null;
-        }
+                
+                // Clear input
+                chatInput.value = '';
+            }
 
-        // Main Game Logic
-        document.addEventListener('DOMContentLoaded', function() {
+            function addChatMessage(message, senderType) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `chat-message ${senderType}`;
+                
+                if (senderType === 'you') {
+                    messageDiv.innerHTML = `<div class="sender">You</div>${message}`;
+                } else {
+                    const senderName = message.split(' ')[0].replace(':', '');
+                    messageDiv.innerHTML = `<div class="sender">${senderName}</div>${message.substring(message.indexOf(' ') + 1)}`;
+                }
+                
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            // Handle chat input
+            chatInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    sendMessage(chatInput.value);
+                }
+            });
+
+            chatSendBtn.addEventListener('click', () => {
+                sendMessage(chatInput.value);
+            });
+
+            // Create a simple signaling server using WebRTC data channels
+            function createPeerConnection(isInitiator) {
+                const config = {
+                    iceServers: [
+                        { urls: 'stun:stun.l.google.com:19302' },
+                        { urls: 'stun:stun1.l.google.com:19302' }
+                    ]
+                };
+                
+                peerConnection = new RTCPeerConnection(config);
+                
+                // Create data channel for sending player positions
+                if (isInitiator) {
+                    dataChannel = peerConnection.createDataChannel('lego-data');
+                    setupDataChannel(dataChannel);
+                }
+                
+                peerConnection.ondatachannel = event => {
+                    dataChannel = event.channel;
+                    setupDataChannel(dataChannel);
+                };
+                
+                peerConnection.onicecandidate = event => {
+                    if (event.candidate) {
+                        console.log('ICE candidate:', event.candidate);
+                    }
+                };
+                
+                return peerConnection;
+            }
+            
+            function setupDataChannel(channel) {
+                channel.onopen = () => {
+                    console.log('Data channel opened');
+                    connectionStatus.classList.add('connected');
+                    connectionText.textContent = isHost ? 'Hosting game...' : 'Connected!';
+                    updateConnectionStatus();
+                    
+                    // Send welcome message
+                    if (isHost) {
+                        addChatMessage("Welcome to the game!", "other");
+                    }
+                };
+                
+                channel.onmessage = event => {
+                    const data = JSON.parse(event.data);
+                    handleNetworkMessage(data);
+                };
+                
+                channel.onerror = error => {
+                    console.error('Data channel error:', error);
+                };
+            }
+            
+            function handleNetworkMessage(data) {
+                if (data.type === 'player-update') {
+                    if (data.playerId !== localPlayerId) {
+                        updateRemotePlayer(data.playerId, data.position, data.customization);
+                    }
+                } else if (data.type === 'player-joined') {
+                    if (data.playerId !== localPlayerId) {
+                        // Create remote player
+                        createRemotePlayer(data.playerId, data.name, data.position, data.customization);
+                        addChatMessage(`${data.name} joined the game!`, "other");
+                    }
+                } else if (data.type === 'player-left') {
+                    if (remotePlayers[data.playerId]) {
+                        remotePlayers[data.playerId].element.remove();
+                        delete remotePlayers[data.playerId];
+                    }
+                    addChatMessage(`${data.name} left the game.`, "other");
+                } else if (data.type === 'chat-message') {
+                    if (data.playerId !== localPlayerId) {
+                        addChatMessage(`${data.name}: ${data.message}`, "other");
+                    }
+                }
+            }
+            
+            function updateConnectionStatus() {
+                if (isHost || isJoined) {
+                    connectionStatus.classList.add('connected');
+                    connectionText.textContent = isHost ? 'Hosting game...' : 'Connected!';
+                } else {
+                    connectionStatus.classList.remove('connected');
+                    connectionText.textContent = 'Not connected';
+                }
+            }
+            
+            // Host Game Button
+            document.getElementById('hostBtn').addEventListener('click', () => {
+                if (isHost || isJoined) return;
+                
+                isHost = true;
+                roomCode = Math.random().toString(36).substr(2, 6).toUpperCase();
+                alert(`Room Code: ${roomCode}\nShare this code with friends to join!`);
+                
+                createPeerConnection(true);
+                updateConnectionStatus();
+                addChatMessage("You've created a new game room!", "other");
+            });
+            
+            // Join Game Button
+            document.getElementById('joinBtn').addEventListener('click', () => {
+                if (isHost || isJoined) return;
+                
+                const code = prompt("Enter room code:");
+                if (!code) return;
+                
+                roomCode = code.toUpperCase();
+                isJoined = true;
+                
+                createPeerConnection(false);
+                updateConnectionStatus();
+                
+                // In a real app, you'd signal to the host that you want to join
+                // For this demo, we'll simulate the connection
+                setTimeout(() => {
+                    if (dataChannel) {
+                        // Send join message
+                        const joinMessage = {
+                            type: 'player-joined',
+                            playerId: localPlayerId,
+                            name: playerName,
+                            position: { x: 200, y: 300 },
+                            customization: getCurrentCustomization()
+                        };
+                        dataChannel.send(JSON.stringify(joinMessage));
+                        addChatMessage("You've joined the game!", "other");
+                    }
+                }, 1000);
+            });
+            
+            function getCurrentCustomization() {
+                return {
+                    head: getSelectedColor('head') || 'skin',
+                    body: getSelectedColor('body') || 'red',
+                    legs: getSelectedColor('legs') || 'blue',
+                    hair: getSelectedColor('hair') || 'brown',
+                    face: getSelectedColor('face') || 'neutral'
+                };
+            }
+            
+            function getSelectedColor(part) {
+                return document.querySelector(`.color-option[data-part="${part}"].selected`)?.dataset.color || null;
+            }
+
+            // Main Game Logic
             const world = document.querySelector('.world-view');
             const itemsContainer = document.getElementById('itemsContainer');
             const buildBtns = document.querySelectorAll('.build-btn');
@@ -1875,7 +2200,7 @@
                 createLegoItem('car', 100, 300);
                 createLegoItem('house', 250, 280);
             }, 500);
-        });
+        }
     </script>
 </body>
 </html>
